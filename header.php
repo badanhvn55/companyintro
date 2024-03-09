@@ -13,6 +13,8 @@
   <?php
   wp_head();
 
+  $fEN = get_template_directory_uri() . "/asset/images/f-en.jpg";
+  $fVN = get_template_directory_uri() . "/asset/images/f-vn.jpg";
   $logo = get_template_directory_uri() . "/asset/images/logo.png";
   $slide1 = get_template_directory_uri() . "/asset/images/slide2.png";
   $slide2 = get_template_directory_uri() . "/asset/images/slide3.png";
@@ -29,14 +31,14 @@
       <div class="header-top">
         <div class="container">
           <ul class="pull-right">
-            <li><a href="#"><i class="fas fa-stroopwafel"></i>Sitemap</a></li>
-            <li><a href="#"><i class="fas fa-stroopwafel"></i>Hạt Ngọc Trời</a></li>
-            <li><a href="#"><i class="fas fa-stroopwafel"></i>Hương Vị Trời</a></li>
-            <li><a href="#"><i class="fas fa-stroopwafel"></i>Quản Nông Xanh</a></li>
-            <li><a href="#"><i class="fas fa-stroopwafel"></i>Tuyển Dụng</a></li>
-            <li><a href="#"><i class="fas fa-stroopwafel"></i>Liên Hệ</a></li>
-            <li><a href="#"><i class="fas fa-stroopwafel"></i></a></li>
-            <li><a href="#"><i class="fas fa-stroopwafel"></i></a></li>
+            <li><a href="#"><i class="fas fa-map"></i>Sitemap</a></li>
+            <li><a href="#"><i class="fas fa-map"></i>Hạt Ngọc Trời</a></li>
+            <li><a href="#"><i class="fas fa-map"></i>Hương Vị Trời</a></li>
+            <li><a href="#"><i class="fas fa-map"></i>Quản Nông Xanh</a></li>
+            <li><a href="#"><i class="fas fa-map"></i>Tuyển Dụng</a></li>
+            <li><a href="#"><i class="fas fa-envelope"></i>Liên Hệ</a></li>
+            <li><a href="#"><img src="<?php echo $fEN ?>" width="25" /></a></li>
+            <li><a href="#"><img src="<?php echo $fVN ?>" width="25" /></a></li>
           </ul>
         </div>
       </div>
@@ -85,56 +87,6 @@
       </ul>
     </div>
   </nav>
-
-  <!-- <nav class="navbar navbar-expand-lg navbar-light bg-light">
-    <div class="container">
-      <a class="navbar-brand" href="#">LOGO</a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarSupportedContent">
-        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-          <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="#">Trang chủ</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">Giới thiệu</a>
-          </li>
-          <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-              Tin tức
-            </a>
-            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-              <li><a class="dropdown-item" href="#">Action</a></li>
-              <li><a class="dropdown-item" href="#">Another action</a></li>
-              <li>
-                <hr class="dropdown-divider">
-              </li>
-              <li><a class="dropdown-item" href="#">Something else here</a></li>
-            </ul>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">Tin tức</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">Chuyển đổi số</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">Sản phẩm</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">Quan hệ cổ đông</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">Phát triển bền vững</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">Media</a>
-          </li>
-        </ul>
-      </div>
-    </div>
-  </nav> -->
 
   <div class="header-slide clsslide">
     <div class="card card-raised card-carousel">

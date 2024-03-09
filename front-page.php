@@ -1,11 +1,84 @@
 	<?php
 	get_header();
+	$thucpham = get_template_directory_uri() . "/asset/images/thuc-pham.png";
+	$dichvu = get_template_directory_uri() . "/asset/images/dich-vu.png";
+	$chuoigiatri = get_template_directory_uri() . "/asset/images/chuoi-gia-tri.png";
+	$cndrd = get_template_directory_uri() . "/asset/images/CNDRĐ.png";
+	$nghiencuuvaphattrien = get_template_directory_uri() . "/asset/images/nghien-cuu-va-phat-trien.png";
+	$baovethucvat = get_template_directory_uri() . "/asset/images/bao-ve-thuc-vat.png";
 	?>
 
 	<div class="container">
 		<div class="row">
 			<div class="col-md-12 col-xs-12">
-				<div class="box_products"></div>
+				<div class="box_products">
+					<div class="row">
+						<div class="col-md-12">
+							<div class="carousel slide" data-ride="carousel">
+								<div class="carousel-inner">
+									<div class="carousel-item active">
+										<div class="row">
+
+											<div class="col-md-3">
+												<div class="product_item">
+													<img src="<?php echo $thucpham ?>" width="70" />
+													<p class="card-title">Thực phẩm</p>
+												</div>
+											</div>
+											<div class="col-md-3">
+												<div class="product_item">
+													<img src="<?php echo $dichvu ?>" width="70" />
+													<p class="card-title">Dịch vụ</p>
+												</div>
+											</div>
+											<div class="col-md-3">
+												<div class="product_item">
+													<img src="<?php echo $chuoigiatri ?>" width="70" />
+													<p class="card-title">Chuỗi giá trị</p>
+												</div>
+											</div>
+											<div class="col-md-3">
+												<div class="product_item">
+													<img src="<?php echo $cndrd ?>" width="70" />
+													<p class="card-title">Cùng nông dân ra đồng</p>
+												</div>
+											</div>
+										</div>
+									</div>
+									<div class="carousel-item">
+										<div class="row">
+
+											<div class="col-md-3">
+												<div class="product_item">
+													<img src="<?php echo $cndrd ?>" width="70" />
+													<p class="card-title">Cùng nông dân ra đồng</p>
+												</div>
+											</div>
+											<div class="col-md-3">
+												<div class="product_item">
+													<img src="<?php echo $nghiencuuvaphattrien ?>" width="70" />
+													<p class="card-title">Nghiên cứu và phát triển</p>
+												</div>
+											</div>
+											<div class="col-md-3">
+											<div class="product_item">
+													<img src="<?php echo $baovethucvat ?>" width="70" />
+													<p class="card-title">Bảo vệ thực vật</p>
+												</div>
+											</div>
+											<div class="col-md-3">
+												<div class="product_item">
+													<img src="<?php echo $thucpham ?>" width="70" />
+													<p class="card-title">Thực phẩm</p>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
 				<div class="box_highlight box-default">
 					<div class="row">
 						<div class="col-md-12">

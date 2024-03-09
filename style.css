@@ -8,6 +8,7 @@ Author: Nguyen Ba Danh
 Author URI: https://github.com/badanhvn55
 */
 @import url(https://fonts.googleapis.com/css?family=Calibri:400,300,700);
+
 :root {
     --blue: #007bff;
     --indigo: #6610f2;
@@ -55,13 +56,16 @@ Author URI: https://github.com/badanhvn55
 html {
     line-height: 1.15;
 }
+
 body {
     color: var(--secondary);
     overflow-x: hidden
 }
-a{
+
+a {
     color: var(--pink);
 }
+
 h1,
 h2,
 h3,
@@ -103,19 +107,18 @@ h6 {
 .theme-bg-dark {
     background: var(--dark) !important
 }
+
 @media (prefers-reduced-motion: reduce) {
     .social-list a {
         transition: none
     }
+
     .btn {
         transition: none
     }
 }
 
-@media (min-width: 768px) {
-   
-    
-}
+@media (min-width: 768px) {}
 
 @media (max-width: 991.98px) {
     /* .page-title {
@@ -150,9 +153,7 @@ h6 {
     } */
 }
 
-@media (max-width: 767.98px) {
-    
-}
+@media (max-width: 767.98px) {}
 
 ul {
     list-style-type: none;
@@ -171,6 +172,7 @@ ul {
     font-weight: bold;
     text-transform: uppercase;
     text-decoration: none;
+    font-size: 0.9rem;
 }
 
 .pull-right {
@@ -187,7 +189,7 @@ ul {
     margin-left: 1rem;
 }
 
-.large-header .header-top ul li a{
+.large-header .header-top ul li a {
     color: var(--white);
     text-decoration: none;
 }
@@ -206,31 +208,51 @@ ul {
     vertical-align: middle;
     display: flex;
     font-family: 'Calibri', sans-serif !important;
-	background-color: var(--white);
+    background-color: var(--white);
 }
 
-.carousel .carousel-indicators li{
-	display:inline-block;
-	width:10px;
-	height:10px;
-	text-indent: -99px;
-	cursor:pointer;
-	border:1px solid var(--white);
-	background: var(--white);
-	border-radius:2px;
+.carousel .carousel-indicators li {
+    display: inline-block;
+    width: 10px;
+    height: 10px;
+    text-indent: -99px;
+    cursor: pointer;
+    border: 1px solid var(--white);
+    background: var(--white);
+    border-radius: 2px;
 }
 
+.box_products {
+    padding: 1rem 0;
+    border-bottom: 1px solid var(--lightgray);
+}
+
+.box_products .product_item {
+    display: flex;
+    gap: 2;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.box_products .product_item p {
+    color: var(--green);
+    text-transform: uppercase;
+    font-weight: bold;
+}
 
 
 .box_newsHome .box_title {
     text-transform: uppercase;
     font-weight: bold;
-    border-bottom: 1px solid var(--gray);
+    border-bottom: 1px solid var(--lightgray);
     margin: 1rem 0;
 }
 
 .box_newsHome .box_title a {
     color: var(--green);
+    border-bottom: 1px solid var(--gray);
+    padding-bottom: 1px;
 }
 
 
@@ -264,7 +286,8 @@ ul {
     padding: 1rem 0;
 }
 
-.box_footer p, .box_footer a {
+.box_footer p,
+.box_footer a {
     color: var(--white);
 }
 
