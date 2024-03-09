@@ -1,0 +1,273 @@
+/*
+Theme Name: companyintro
+Text Domain: Company Intro
+Version: 1.0
+Description: Company introduce theme
+Tags: companyintro, taiwindcss, responsive
+Author: Nguyen Ba Danh
+Author URI: https://github.com/badanhvn55
+*/
+@import url(https://fonts.googleapis.com/css?family=Calibri:400,300,700);
+:root {
+    --blue: #007bff;
+    --indigo: #6610f2;
+    --purple: #6f42c1;
+    --pink: #ee3577;
+    --red: #dc3545;
+    --orange: #f68e62;
+    --yellow: #ffc107;
+    --green: #28a745;
+    --teal: #20c997;
+    --cyan: #17a2b8;
+    --white: #fff;
+    --gray: #767575;
+    --gray-dark: #434242;
+    --primary: #6f42c1;
+    --secondary: #4f4f4f;
+    --success: #28a745;
+    --info: #17a2b8;
+    --warning: #ffc107;
+    --danger: #dc3545;
+    --light: #c2c2c2;
+    --lightgray: #eeeeee;
+    --dark: #434242;
+    --breakpoint-xs: 0;
+    --breakpoint-sm: 576px;
+    --breakpoint-md: 768px;
+    --breakpoint-lg: 992px;
+    --breakpoint-xl: 1200px;
+    --font-family-sans-serif: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+    --font-family-monospace: SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+    /* Font Sizes */
+    --font-normal: 1em;
+    --font-small: 0.8125rem;
+    /* Sidebar */
+    --sidebar-width: 280px;
+    --content-max-width: 860px;
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box
+}
+
+html {
+    line-height: 1.15;
+}
+body {
+    color: var(--secondary);
+    overflow-x: hidden
+}
+a{
+    color: var(--pink);
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    color: var(--gray-dark);
+    font-weight: bold
+}
+
+.btn {
+    font-weight: bold;
+    padding: .375rem 1rem;
+    height: 2.75rem;
+    transition: all 0.4s ease-in-out
+}
+
+
+.btn:focus,
+.btn.focus {
+    box-shadow: none !important
+}
+
+.btn-primary {
+    color: #fff
+}
+
+.form-control {
+    padding-top: 0.875rem;
+    padding-bottom: 0.875rem;
+    height: 2.75rem;
+    border-color: var(--light)
+}
+
+.theme-bg-light {
+    background: var(--light) !important
+}
+
+.theme-bg-dark {
+    background: var(--dark) !important
+}
+@media (prefers-reduced-motion: reduce) {
+    .social-list a {
+        transition: none
+    }
+    .btn {
+        transition: none
+    }
+}
+
+@media (min-width: 768px) {
+   
+    
+}
+
+@media (max-width: 991.98px) {
+    /* .page-title {
+        position:static;
+    }
+    .header {
+        position: sticky;
+        width: inherit;
+        height: auto
+    }
+
+    .header .site-title {
+        width: 100%;
+        position: absolute;
+        left: 0;
+        top: 1.2rem;
+        color:var(--white);
+        font-size:1.5em;
+        display:block;
+    }
+
+    .header .btn-primary {
+        width: 100%
+    }
+
+    .header .navbar {
+        padding: 1rem
+    }
+
+    .main-wrapper {
+        margin-left: 0
+    } */
+}
+
+@media (max-width: 767.98px) {
+    
+}
+
+ul {
+    list-style-type: none;
+}
+
+.header-top {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: var(--green);
+    min-height: 32px;
+}
+
+.navbar a {
+    color: var(--green);
+    font-weight: bold;
+    text-transform: uppercase;
+    text-decoration: none;
+}
+
+.pull-right {
+    float: right;
+}
+
+.large-header .header-top ul {
+    margin: 0;
+    padding: 0;
+}
+
+.large-header .header-top ul li {
+    display: inline-block;
+    margin-left: 1rem;
+}
+
+.large-header .header-top ul li a{
+    color: var(--white);
+    text-decoration: none;
+}
+
+.large-header .header-top ul li a i {
+    padding-right: 0.25rem;
+}
+
+/* Slider */
+
+.header-slide {
+    width: 100%;
+}
+
+.clsslide {
+    vertical-align: middle;
+    display: flex;
+    font-family: 'Calibri', sans-serif !important;
+	background-color: var(--white);
+}
+
+.carousel .carousel-indicators li{
+	display:inline-block;
+	width:10px;
+	height:10px;
+	text-indent: -99px;
+	cursor:pointer;
+	border:1px solid var(--white);
+	background: var(--white);
+	border-radius:2px;
+}
+
+
+
+.box_newsHome .box_title {
+    text-transform: uppercase;
+    font-weight: bold;
+    border-bottom: 1px solid var(--gray);
+    margin: 1rem 0;
+}
+
+.box_newsHome .box_title a {
+    color: var(--green);
+}
+
+
+.footer-top {
+    border-bottom: 1px solid var(--green);
+}
+
+.footer-link {
+    margin: 0 auto;
+}
+
+.box_footer .menuBottom {
+    text-transform: uppercase;
+}
+
+.box_footer .menuBottom ul li {
+    float: left;
+    padding: 10px 20px 5px 0;
+    list-style: none;
+}
+
+.footer-link ul li {
+    display: inline-block;
+    font-size: 14px;
+    color: var(--white);
+}
+
+.footer-bottom {
+    text-align: center;
+    color: var(--white);
+    padding: 1rem 0;
+}
+
+.box_footer p, .box_footer a {
+    color: var(--white);
+}
+
+.box_address {
+    padding-top: 2rem;
+}
