@@ -2,8 +2,22 @@
 
 function companyintro_theme_support() {
     // Adds dynamic title tag support
-    add_theme_support('title_tag');
+    add_theme_support('title-tag');
 }
+
+add_action('after_setup_theme', 'companyintro_theme_support');
+
+function companyintro_menus() {
+    
+    $location = array(
+        'primary' => 'Desktop Primary Left Sidebar',
+        'footer' => 'Footer Menu Items'
+    );
+
+    register_nav_menus($location);
+}
+
+add_action('init', 'companyintro_menus');
 
 add_action('after_setup_theme', 'companyintro_theme_support');
 
