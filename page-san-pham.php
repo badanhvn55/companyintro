@@ -1,8 +1,16 @@
 <?php
-get_header();    ?>
+get_header();
+?>
 
 <div class="container">
     <div class="row">
+        <div class="col-md-12">
+            <div class="link-address">
+                <a href="/wordpress">Trang chủ</a>
+                <span>></span>
+                <a href="">Sản phẩm</a>
+            </div>
+        </div>
         <div class="col-md-3">
             <div class="box_sidebar">
                 <div class="sidebar_content">

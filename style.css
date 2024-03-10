@@ -298,6 +298,26 @@ ul {
 
 
 /* ======================================== */
-.product-categories {
-    
+.box_sidebar {
+    background: var(--lightgray);
+}
+
+.box_sidebar li {
+    padding: 0.5rem 0;
+}
+
+.box_sidebar a {
+    color: var(--cyan);
+    text-transform: uppercase;
+}
+
+.link-address {
+    padding: 1rem 0;
+    margin-bottom: 1rem;
+    border-bottom: 1px solid var(--lightgray);
+}
+
+.link-address a {
+    text-transform: uppercase;
+    color: var(--purple);
 }

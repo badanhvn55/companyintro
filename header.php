@@ -8,7 +8,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="Blog Site Template">
   <meta name="author" content="https://youtube.com/FollowAndrew">
-  <link rel="shortcut icon" href="images/logo.png">
 
   <?php
   wp_head();
@@ -22,6 +21,8 @@
   $slide4 = get_template_directory_uri() . "/asset/images/slide5.png";
 
   ?>
+
+  <link rel="shortcut icon" href="<?php echo $logo ?>">
 
 </head>
 
@@ -47,14 +48,14 @@
   </div>
 
   <nav class="container navbar navbar-expand-lg">
-    <a class="navbar-brand" href="#"><img width="100" src="<?php echo $logo ?>" /></a>
+    <a class="navbar-brand" href="#"><img width="150" src="<?php echo $logo ?>" /></a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="navbarNavDropdown">
       <ul class="navbar-nav">
         <li class="nav-item active">
-          <a class="nav-link" href="#">Trang chủ <span class="sr-only">(current)</span></a>
+          <a class="nav-link" href="/wordpress">Trang chủ <span class="sr-only">(current)</span></a>
         </li>
         <li class="nav-item">
           <a class="nav-link" href="#">Giới thiệu</a>
@@ -73,7 +74,7 @@
           </div>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">Sản phẩm</a>
+          <a class="nav-link" href="/wordpress/san-pham">Sản phẩm</a>
         </li>
         <li class="nav-item">
           <a class="nav-link" href="#">Quan hệ cổ đông</a>
