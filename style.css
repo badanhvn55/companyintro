@@ -321,3 +321,7 @@ ul {
     text-transform: uppercase;
     color: var(--purple);
 }
+
+.san_pham img.img-fluid {
+    height: 300px;
+}

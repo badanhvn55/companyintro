@@ -1,8 +1,32 @@
 <?php
 get_header();
+
+$thuoctruoc1 = get_template_directory_uri() . "/asset/images/san-pham/Thuoc Tru Oc/Clodansuper 700WP (Goi 1kg - Oc Co)0.jpg";
+$thuoctruoc2 = get_template_directory_uri() . "/asset/images/san-pham/Thuoc Tru Oc/Clodansuper 700WP (Goi1 25g)0.jpg";
+$thuoctruoc3 = get_template_directory_uri() . "/asset/images/san-pham/Thuoc Tru Oc/Clodansuper 700WP (Goi1 35g)0.jpg";
+$thuoctruoc4 = get_template_directory_uri() . "/asset/images/san-pham/Thuoc Tru Oc/Clodansuper 700WP (Tui 12g - Sua truc)0.jpg";
+$thuoctruoc5 = get_template_directory_uri() . "/asset/images/san-pham/Thuoc Tru Oc/Clodansuper 700WP (Tui 25g - Tang kich thuoc)0.jpg";
+
+$thuoctruco1 = get_template_directory_uri() . "/asset/images/san-pham/Thuoc Tru Co/Misaron 80WP (Goi 100g - Con Voi Rung)0.jpg";
+$thuoctruco2 = get_template_directory_uri() . "/asset/images/san-pham/Thuoc Tru Co/Nomicet 500WP (Goi 25g) + Sharon 100WP (Goi 15g)0.jpg";
+$thuoctruco3 = get_template_directory_uri() . "/asset/images/san-pham/Thuoc Tru Co/Saco 600EC (CT 400ml - Co Cay 3D).jpg";
+$thuoctruco4 = get_template_directory_uri() . "/asset/images/san-pham/Thuoc Tru Co/Saco 600EC (CT2 75ml - Co Cay - 3D).jpg";
+$thuoctruco5 = get_template_directory_uri() . "/asset/images/san-pham/Thuoc Tru Co/Sharon 100WP (Goi 5g - Doc)0.jpg";
+
+$thuoctrubenh1 = get_template_directory_uri() . "/asset/images/san-pham/Thuoc Tru Benh/Alphacol 700WP (Goi 400g - Suong mai, Than thu)0.jpg";
+$thuoctrubenh2 = get_template_directory_uri() . "/asset/images/san-pham/Thuoc Tru Benh/Goldbem 777WP (Goi 100g - 3 HC 3 SM)0.jpg";
+$thuoctrubenh3 = get_template_directory_uri() . "/asset/images/san-pham/Thuoc Tru Benh/Lervil 100SC (CT 450ml - Hexa Xanh 3D).jpg";
+$thuoctrubenh4 = get_template_directory_uri() . "/asset/images/san-pham/Thuoc Tru Benh/Lervil 100SC (Goi 20ml - Hexa Xanh)0.jpg";
+$thuoctrubenh5 = get_template_directory_uri() . "/asset/images/san-pham/Thuoc Tru Benh/Supercin 40SL (CT 240ml 3D Do).jpg";
+
+$thuoctrusau1 = get_template_directory_uri() . "/asset/images/san-pham/Thuoc Tru Sau/Aperlaur 700WG (Goi 15g - Checs Syn)0.jpg";
+$thuoctrusau2 = get_template_directory_uri() . "/asset/images/san-pham/Thuoc Tru Sau/Bupte-HB 300WP (Goi 100g - Vua Ray, Bo Tri)0.jpg";
+$thuoctrusau3 = get_template_directory_uri() . "/asset/images/san-pham/Thuoc Tru Sau/Daran-HB 250WP (Goi 40g - Super Ram)0.jpg";
+$thuoctrusau4 = get_template_directory_uri() . "/asset/images/san-pham/Thuoc Tru Sau/Pyphos-HB 500EC (CT 250ml - Ho Gam - 3D).jpg";
+$thuoctrusau5 = get_template_directory_uri() . "/asset/images/san-pham/Thuoc Tru Sau/Sedox 200EC (CT 450 - Chai Nhom 3D).jpg";
 ?>
 
-<div class="container">
+<div class="container san_pham">
     <div class="row">
         <div class="col-md-12">
             <div class="link-address">
@@ -30,9 +54,11 @@ get_header();
             </div>
         </div>
         <div class="col-md-9">
+
+            <!-- Thuốc trừ ốc -->
             <div class="box_newsHome">
                 <div class="box_title box-title-default">
-                    <a href="#">Giống cây trồng</a>
+                    <a href="#">Thuốc trừ ốc</a>
                 </div>
                 <div class="slide_hinhanh" id="box_newsHome">
                     <div class="carousel slide" data-ride="carousel">
@@ -42,31 +68,26 @@ get_header();
 
                                     <div class="col-md-4 mb-3">
                                         <div class="card">
-                                            <img class="img-fluid" alt="100%x280" src="https://images.unsplash.com/photo-1532781914607-2031eca2f00d?ixlib=rb-0.3.5&amp;q=80&amp;fm=jpg&amp;crop=entropy&amp;cs=tinysrgb&amp;w=1080&amp;fit=max&amp;ixid=eyJhcHBfaWQiOjMyMDc0fQ&amp;s=7c625ea379640da3ef2e24f20df7ce8d">
+                                            <img class="img-fluid" alt="100%x280" src="<?php echo $thuoctruoc1 ?>">
                                             <div class="card-body">
-                                                <h4 class="card-title">Special title treatment</h4>
-                                                <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-
+                                                <p class="card-text">Clodansuper 700WP (Goi 1kg - Oc Co)</p>
                                             </div>
 
                                         </div>
                                     </div>
                                     <div class="col-md-4 mb-3">
                                         <div class="card">
-                                            <img class="img-fluid" alt="100%x280" src="https://images.unsplash.com/photo-1517760444937-f6397edcbbcd?ixlib=rb-0.3.5&amp;q=80&amp;fm=jpg&amp;crop=entropy&amp;cs=tinysrgb&amp;w=1080&amp;fit=max&amp;ixid=eyJhcHBfaWQiOjMyMDc0fQ&amp;s=42b2d9ae6feb9c4ff98b9133addfb698">
+                                            <img class="img-fluid" alt="100%x280" src="<?php echo $thuoctruoc2 ?>">
                                             <div class="card-body">
-                                                <h4 class="card-title">Special title treatment</h4>
-                                                <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-
+                                                <p class="card-text">Clodansuper 700WP (Goi1 25g)</p>
                                             </div>
                                         </div>
                                     </div>
                                     <div class="col-md-4 mb-3">
                                         <div class="card">
-                                            <img class="img-fluid" alt="100%x280" src="https://images.unsplash.com/photo-1532712938310-34cb3982ef74?ixlib=rb-0.3.5&amp;q=80&amp;fm=jpg&amp;crop=entropy&amp;cs=tinysrgb&amp;w=1080&amp;fit=max&amp;ixid=eyJhcHBfaWQiOjMyMDc0fQ&amp;s=3d2e8a2039c06dd26db977fe6ac6186a">
+                                            <img class="img-fluid" alt="100%x280" src="<?php echo $thuoctruoc3 ?>">
                                             <div class="card-body">
-                                                <h4 class="card-title">Special title treatment</h4>
-                                                <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+                                                <p class="card-text">Clodansuper 700WP (Goi1 35g)</p>
 
                                             </div>
                                         </div>
@@ -79,10 +100,9 @@ get_header();
 
                                     <div class="col-md-4 mb-3">
                                         <div class="card">
-                                            <img class="img-fluid" alt="100%x280" src="https://images.unsplash.com/photo-1532771098148-525cefe10c23?ixlib=rb-0.3.5&amp;q=80&amp;fm=jpg&amp;crop=entropy&amp;cs=tinysrgb&amp;w=1080&amp;fit=max&amp;ixid=eyJhcHBfaWQiOjMyMDc0fQ&amp;s=3f317c1f7a16116dec454fbc267dd8e4">
+                                            <img class="img-fluid" alt="100%x280" src="<?php echo $thuoctruoc4 ?>">
                                             <div class="card-body">
-                                                <h4 class="card-title">Special title treatment</h4>
-                                                <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+                                                <p class="card-text">Clodansuper 700WP (Tui 12g - Sua truc)</p>
 
                                             </div>
 
@@ -90,69 +110,35 @@ get_header();
                                     </div>
                                     <div class="col-md-4 mb-3">
                                         <div class="card">
-                                            <img class="img-fluid" alt="100%x280" src="https://images.unsplash.com/photo-1532715088550-62f09305f765?ixlib=rb-0.3.5&amp;q=80&amp;fm=jpg&amp;crop=entropy&amp;cs=tinysrgb&amp;w=1080&amp;fit=max&amp;ixid=eyJhcHBfaWQiOjMyMDc0fQ&amp;s=ebadb044b374504ef8e81bdec4d0e840">
+                                            <img class="img-fluid" alt="100%x280" src="<?php echo $thuoctruoc5 ?>">
                                             <div class="card-body">
-                                                <h4 class="card-title">Special title treatment</h4>
-                                                <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+                                                <p class="card-text">Clodansuper 700WP (Tui 25g - Tang kich thuoc)</p>
 
                                             </div>
                                         </div>
                                     </div>
                                     <div class="col-md-4 mb-3">
                                         <div class="card">
-                                            <img class="img-fluid" alt="100%x280" src="https://images.unsplash.com/photo-1506197603052-3cc9c3a201bd?ixlib=rb-0.3.5&amp;q=80&amp;fm=jpg&amp;crop=entropy&amp;cs=tinysrgb&amp;w=1080&amp;fit=max&amp;ixid=eyJhcHBfaWQiOjMyMDc0fQ&amp;s=0754ab085804ae8a3b562548e6b4aa2e">
+                                            <img class="img-fluid" alt="100%x280" src="<?php echo $thuoctruoc1 ?>">
                                             <div class="card-body">
-                                                <h4 class="card-title">Special title treatment</h4>
-                                                <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+                                                <p class="card-text">Clodansuper 700WP (Goi 1kg - Oc Co)</p>
 
                                             </div>
                                         </div>
                                     </div>
 
-                                </div>
-                            </div>
-                            <div class="carousel-item">
-                                <div class="row">
-
-                                    <div class="col-md-4 mb-3">
-                                        <div class="card">
-                                            <img class="img-fluid" alt="100%x280" src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?ixlib=rb-0.3.5&amp;q=80&amp;fm=jpg&amp;crop=entropy&amp;cs=tinysrgb&amp;w=1080&amp;fit=max&amp;ixid=eyJhcHBfaWQiOjMyMDc0fQ&amp;s=ee8417f0ea2a50d53a12665820b54e23">
-                                            <div class="card-body">
-                                                <h4 class="card-title">Special title treatment</h4>
-                                                <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-
-                                            </div>
-
-                                        </div>
-                                    </div>
-                                    <div class="col-md-4 mb-3">
-                                        <div class="card">
-                                            <img class="img-fluid" alt="100%x280" src="https://images.unsplash.com/photo-1532777946373-b6783242f211?ixlib=rb-0.3.5&amp;q=80&amp;fm=jpg&amp;crop=entropy&amp;cs=tinysrgb&amp;w=1080&amp;fit=max&amp;ixid=eyJhcHBfaWQiOjMyMDc0fQ&amp;s=8ac55cf3a68785643998730839663129">
-                                            <div class="card-body">
-                                                <h4 class="card-title">Special title treatment</h4>
-                                                <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-md-4 mb-3">
-                                        <div class="card">
-                                            <img class="img-fluid" alt="100%x280" src="https://images.unsplash.com/photo-1532763303805-529d595877c5?ixlib=rb-0.3.5&amp;q=80&amp;fm=jpg&amp;crop=entropy&amp;cs=tinysrgb&amp;w=1080&amp;fit=max&amp;ixid=eyJhcHBfaWQiOjMyMDc0fQ&amp;s=5ee4fd5d19b40f93eadb21871757eda6">
-                                            <div class="card-body">
-                                                <h4 class="card-title">Special title treatment</h4>
-                                                <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-                                            </div>
-                                        </div>
-                                    </div>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
+
+
+            <!-- Thuốc trừ cỏ -->
             <div class="box_newsHome">
                 <div class="box_title box-title-default">
-                    <a href="#">Nông dược</a>
+                    <a href="#">Thuốc trừ cỏ</a>
                 </div>
                 <div class="slide_hinhanh" id="box_newsHome">
                     <div class="carousel slide" data-ride="carousel">
@@ -162,10 +148,9 @@ get_header();
 
                                     <div class="col-md-4 mb-3">
                                         <div class="card">
-                                            <img class="img-fluid" alt="100%x280" src="https://images.unsplash.com/photo-1532781914607-2031eca2f00d?ixlib=rb-0.3.5&amp;q=80&amp;fm=jpg&amp;crop=entropy&amp;cs=tinysrgb&amp;w=1080&amp;fit=max&amp;ixid=eyJhcHBfaWQiOjMyMDc0fQ&amp;s=7c625ea379640da3ef2e24f20df7ce8d">
+                                            <img class="img-fluid" alt="100%x280" src="<?php echo $thuoctruco1 ?>">
                                             <div class="card-body">
-                                                <h4 class="card-title">Special title treatment</h4>
-                                                <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+                                                <p class="card-text">Misaron 80WP (Goi 100g - Con Voi Rung)</p>
 
                                             </div>
 
@@ -173,20 +158,18 @@ get_header();
                                     </div>
                                     <div class="col-md-4 mb-3">
                                         <div class="card">
-                                            <img class="img-fluid" alt="100%x280" src="https://images.unsplash.com/photo-1517760444937-f6397edcbbcd?ixlib=rb-0.3.5&amp;q=80&amp;fm=jpg&amp;crop=entropy&amp;cs=tinysrgb&amp;w=1080&amp;fit=max&amp;ixid=eyJhcHBfaWQiOjMyMDc0fQ&amp;s=42b2d9ae6feb9c4ff98b9133addfb698">
+                                            <img class="img-fluid" alt="100%x280" src="<?php echo $thuoctruco2 ?>">
                                             <div class="card-body">
-                                                <h4 class="card-title">Special title treatment</h4>
-                                                <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+                                                <p class="card-text">Nomicet 500WP (Goi 25g) + Sharon 100WP (Goi 15g)</p>
 
                                             </div>
                                         </div>
                                     </div>
                                     <div class="col-md-4 mb-3">
                                         <div class="card">
-                                            <img class="img-fluid" alt="100%x280" src="https://images.unsplash.com/photo-1532712938310-34cb3982ef74?ixlib=rb-0.3.5&amp;q=80&amp;fm=jpg&amp;crop=entropy&amp;cs=tinysrgb&amp;w=1080&amp;fit=max&amp;ixid=eyJhcHBfaWQiOjMyMDc0fQ&amp;s=3d2e8a2039c06dd26db977fe6ac6186a">
+                                            <img class="img-fluid" alt="100%x280" src="<?php echo $thuoctruco3 ?>">
                                             <div class="card-body">
-                                                <h4 class="card-title">Special title treatment</h4>
-                                                <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+                                                <p class="card-text">Saco 600EC (CT 400ml - Co Cay)</p>
 
                                             </div>
                                         </div>
@@ -199,10 +182,9 @@ get_header();
 
                                     <div class="col-md-4 mb-3">
                                         <div class="card">
-                                            <img class="img-fluid" alt="100%x280" src="https://images.unsplash.com/photo-1532771098148-525cefe10c23?ixlib=rb-0.3.5&amp;q=80&amp;fm=jpg&amp;crop=entropy&amp;cs=tinysrgb&amp;w=1080&amp;fit=max&amp;ixid=eyJhcHBfaWQiOjMyMDc0fQ&amp;s=3f317c1f7a16116dec454fbc267dd8e4">
+                                            <img class="img-fluid" alt="100%x280" src="<?php echo $thuoctruco4 ?>">
                                             <div class="card-body">
-                                                <h4 class="card-title">Special title treatment</h4>
-                                                <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+                                                <p class="card-text">Saco 600EC (CT2 75ml - Co Cay)</p>
 
                                             </div>
 
@@ -210,66 +192,194 @@ get_header();
                                     </div>
                                     <div class="col-md-4 mb-3">
                                         <div class="card">
-                                            <img class="img-fluid" alt="100%x280" src="https://images.unsplash.com/photo-1532715088550-62f09305f765?ixlib=rb-0.3.5&amp;q=80&amp;fm=jpg&amp;crop=entropy&amp;cs=tinysrgb&amp;w=1080&amp;fit=max&amp;ixid=eyJhcHBfaWQiOjMyMDc0fQ&amp;s=ebadb044b374504ef8e81bdec4d0e840">
+                                            <img class="img-fluid" alt="100%x280" src="<?php echo $thuoctruco5 ?>">
                                             <div class="card-body">
-                                                <h4 class="card-title">Special title treatment</h4>
-                                                <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+                                                <p class="card-text">Sharon 100WP (Goi 5g - Doc)</p>
 
                                             </div>
                                         </div>
                                     </div>
                                     <div class="col-md-4 mb-3">
                                         <div class="card">
-                                            <img class="img-fluid" alt="100%x280" src="https://images.unsplash.com/photo-1506197603052-3cc9c3a201bd?ixlib=rb-0.3.5&amp;q=80&amp;fm=jpg&amp;crop=entropy&amp;cs=tinysrgb&amp;w=1080&amp;fit=max&amp;ixid=eyJhcHBfaWQiOjMyMDc0fQ&amp;s=0754ab085804ae8a3b562548e6b4aa2e">
+                                            <img class="img-fluid" alt="100%x280" src="<?php echo $thuoctruco1 ?>">
                                             <div class="card-body">
-                                                <h4 class="card-title">Special title treatment</h4>
-                                                <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+                                                <p class="card-text">Misaron 80WP (Goi 100g - Con Voi Rung)</p>
 
                                             </div>
                                         </div>
                                     </div>
 
-                                </div>
-                            </div>
-                            <div class="carousel-item">
-                                <div class="row">
-
-                                    <div class="col-md-4 mb-3">
-                                        <div class="card">
-                                            <img class="img-fluid" alt="100%x280" src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?ixlib=rb-0.3.5&amp;q=80&amp;fm=jpg&amp;crop=entropy&amp;cs=tinysrgb&amp;w=1080&amp;fit=max&amp;ixid=eyJhcHBfaWQiOjMyMDc0fQ&amp;s=ee8417f0ea2a50d53a12665820b54e23">
-                                            <div class="card-body">
-                                                <h4 class="card-title">Special title treatment</h4>
-                                                <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-
-                                            </div>
-
-                                        </div>
-                                    </div>
-                                    <div class="col-md-4 mb-3">
-                                        <div class="card">
-                                            <img class="img-fluid" alt="100%x280" src="https://images.unsplash.com/photo-1532777946373-b6783242f211?ixlib=rb-0.3.5&amp;q=80&amp;fm=jpg&amp;crop=entropy&amp;cs=tinysrgb&amp;w=1080&amp;fit=max&amp;ixid=eyJhcHBfaWQiOjMyMDc0fQ&amp;s=8ac55cf3a68785643998730839663129">
-                                            <div class="card-body">
-                                                <h4 class="card-title">Special title treatment</h4>
-                                                <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-md-4 mb-3">
-                                        <div class="card">
-                                            <img class="img-fluid" alt="100%x280" src="https://images.unsplash.com/photo-1532763303805-529d595877c5?ixlib=rb-0.3.5&amp;q=80&amp;fm=jpg&amp;crop=entropy&amp;cs=tinysrgb&amp;w=1080&amp;fit=max&amp;ixid=eyJhcHBfaWQiOjMyMDc0fQ&amp;s=5ee4fd5d19b40f93eadb21871757eda6">
-                                            <div class="card-body">
-                                                <h4 class="card-title">Special title treatment</h4>
-                                                <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-                                            </div>
-                                        </div>
-                                    </div>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
+
+
+            <!-- Thuốc trừ bệnh -->
+            <div class="box_newsHome">
+                <div class="box_title box-title-default">
+                    <a href="#">Thuốc trừ bệnh</a>
+                </div>
+                <div class="slide_hinhanh" id="box_newsHome">
+                    <div class="carousel slide" data-ride="carousel">
+                        <div class="carousel-inner">
+                            <div class="carousel-item active">
+                                <div class="row">
+
+                                    <div class="col-md-4 mb-3">
+                                        <div class="card">
+                                            <img class="img-fluid" alt="100%x280" src="<?php echo $thuoctrubenh1 ?>">
+                                            <div class="card-body">
+                                                <p class="card-text">Alphacol 700WP (Goi 400g - Suong mai, Than thu)</p>
+
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4 mb-3">
+                                        <div class="card">
+                                            <img class="img-fluid" alt="100%x280" src="<?php echo $thuoctrubenh2 ?>">
+                                            <div class="card-body">
+                                                <p class="card-text">Goldbem 777WP (Goi 100g - 3 HC 3 SM)</p>
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4 mb-3">
+                                        <div class="card">
+                                            <img class="img-fluid" alt="100%x280" src="<?php echo $thuoctrubenh3 ?>">
+                                            <div class="card-body">
+                                                <p class="card-text">Lervil 100SC (CT 450ml - Hexa Xanh)</p>
+
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+                            <div class="carousel-item">
+                                <div class="row">
+
+                                    <div class="col-md-4 mb-3">
+                                        <div class="card">
+                                            <img class="img-fluid" alt="100%x280" src="<?php echo $thuoctrubenh4 ?>">
+                                            <div class="card-body">
+                                                <p class="card-text">Lervil 100SC (Goi 20ml - Hexa Xanh)</p>
+
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4 mb-3">
+                                        <div class="card">
+                                            <img class="img-fluid" alt="100%x280" src="<?php echo $thuoctrubenh5 ?>">
+                                            <div class="card-body">
+                                                <p class="card-text">Supercin 40SL (CT 240ml)</p>
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4 mb-3">
+                                        <div class="card">
+                                            <img class="img-fluid" alt="100%x280" src="<?php echo $thuoctrubenh1 ?>">
+                                            <div class="card-body">
+                                                <p class="card-text">Alphacol 700WP (Goi 400g - Suong mai, Than thu)</p>
+
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Thuốc trừ sâu -->
+            <div class="box_newsHome">
+                <div class="box_title box-title-default">
+                    <a href="#">Thuốc trừ sâu</a>
+                </div>
+                <div class="slide_hinhanh" id="box_newsHome">
+                    <div class="carousel slide" data-ride="carousel">
+                        <div class="carousel-inner">
+                            <div class="carousel-item active">
+                                <div class="row">
+
+                                    <div class="col-md-4 mb-3">
+                                        <div class="card">
+                                            <img class="img-fluid" alt="100%x280" src="<?php echo $thuoctrusau1 ?>">
+                                            <div class="card-body">
+                                                <p class="card-text">Aperlaur 700WG (Goi 15g - Checs Syn)</p>
+
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4 mb-3">
+                                        <div class="card">
+                                            <img class="img-fluid" alt="100%x280" src="<?php echo $thuoctrusau2 ?>">
+                                            <div class="card-body">
+                                                <p class="card-text">Bupte-HB 300WP (Goi 100g - Vua Ray, Bo Tri)</p>
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4 mb-3">
+                                        <div class="card">
+                                            <img class="img-fluid" alt="100%x280" src="<?php echo $thuoctrusau3 ?>">
+                                            <div class="card-body">
+                                                <p class="card-text">Daran-HB 250WP (Goi 40g - Super Ram)</p>
+
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+                            <div class="carousel-item">
+                                <div class="row">
+
+                                    <div class="col-md-4 mb-3">
+                                        <div class="card">
+                                            <img class="img-fluid" alt="100%x280" src="<?php echo $thuoctrusau4 ?>">
+                                            <div class="card-body">
+                                                <p class="card-text">Pyphos-HB 500EC (CT 250ml - Ho Gam)</p>
+
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4 mb-3">
+                                        <div class="card">
+                                            <img class="img-fluid" alt="100%x280" src="<?php echo $thuoctrusau5 ?>">
+                                            <div class="card-body">
+                                                <p class="card-text">Sedox 200EC (CT 450 - Chai Nhom)</p>
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4 mb-3">
+                                        <div class="card">
+                                            <img class="img-fluid" alt="100%x280" src="<?php echo $thuoctrusau1 ?>">
+                                            <div class="card-body">
+                                                <p class="card-text">Aperlaur 700WG (Goi 15g - Checs Syn)</p>
+
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
         </div>
     </div>
 </div>
