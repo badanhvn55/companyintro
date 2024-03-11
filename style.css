@@ -200,8 +200,8 @@ ul {
 
 /* Slider */
 
-.header-slide {
-    width: 100%;
+.header-slide img {
+    width: 100vw;
 }
 
 .clsslide {

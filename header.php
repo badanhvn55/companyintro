@@ -15,10 +15,11 @@
   $fEN = get_template_directory_uri() . "/asset/images/f-en.jpg";
   $fVN = get_template_directory_uri() . "/asset/images/f-vn.jpg";
   $logo = get_template_directory_uri() . "/asset/images/logo.png";
-  $slide1 = get_template_directory_uri() . "/asset/images/slide2.png";
-  $slide2 = get_template_directory_uri() . "/asset/images/slide3.png";
-  $slide3 = get_template_directory_uri() . "/asset/images/slide4.png";
-  $slide4 = get_template_directory_uri() . "/asset/images/slide5.png";
+  $slide1 = get_template_directory_uri() . "/asset/images/slide1.png";
+  $slide2 = get_template_directory_uri() . "/asset/images/slide2.png";
+  $slide3 = get_template_directory_uri() . "/asset/images/slide3.png";
+  $slide4 = get_template_directory_uri() . "/asset/images/slide4.png";
+  $slide5 = get_template_directory_uri() . "/asset/images/slide5.png";
 
   ?>
 
@@ -97,19 +98,23 @@
           <li data-target="#carouselindicators" data-slide-to="1" class=""></li>
           <li data-target="#carouselindicators" data-slide-to="2" class=""></li>
           <li data-target="#carouselindicators" data-slide-to="3" class=""></li>
+          <li data-target="#carouselindicators" data-slide-to="4" class=""></li>
         </ol>
         <div class="carousel-inner">
           <div class="carousel-item active">
-            <img class="d-block w-100" src="<?php echo $slide1 ?>" alt="Second slide">
+            <img class="d-block" src="<?php echo $slide1 ?>" alt="First slide">
           </div>
           <div class="carousel-item">
-            <img class="d-block w-100" src="<?php echo $slide2 ?>" alt="Third slide">
+            <img class="d-block" src="<?php echo $slide2 ?>" alt="Second slide">
           </div>
           <div class="carousel-item">
-            <img class="d-block w-100" src="<?php echo $slide3 ?>" alt="Four slide">
+            <img class="d-block" src="<?php echo $slide3 ?>" alt="Third slide">
           </div>
           <div class="carousel-item">
-            <img class="d-block w-100" src="<?php echo $slide4 ?>" alt="Five slide">
+            <img class="d-block" src="<?php echo $slide4 ?>" alt="Four slide">
+          </div>
+          <div class="carousel-item">
+            <img class="d-block" src="<?php echo $slide5 ?>" alt="Five slide">
           </div>
         </div>
         <a class="carousel-control-prev" href="#carouselindicators" role="button" data-slide="prev" data-abc="true">
