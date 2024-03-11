@@ -325,3 +325,17 @@ ul {
 .san_pham img.img-fluid {
     height: 300px;
 }
+
+.san_pham .card {
+    height: 370px;
+}
+
+.truncate {
+    display: -webkit-box;
+    max-width: 100%;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-align: center;
+    padding-top: 0.5rem;
+}

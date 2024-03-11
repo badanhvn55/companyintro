@@ -69,27 +69,19 @@ $thuoctrusau5 = get_template_directory_uri() . "/asset/images/san-pham/Thuoc Tru
                                     <div class="col-md-4 mb-3">
                                         <div class="card">
                                             <img class="img-fluid" alt="100%x280" src="<?php echo $thuoctruoc1 ?>">
-                                            <div class="card-body">
-                                                <p class="card-text">Clodansuper 700WP (Goi 1kg - Oc Co)</p>
-                                            </div>
-
+                                            <p class="card-text truncate">Clodansuper 700WP (Goi 1kg - Oc Co)</p>
                                         </div>
                                     </div>
                                     <div class="col-md-4 mb-3">
                                         <div class="card">
                                             <img class="img-fluid" alt="100%x280" src="<?php echo $thuoctruoc2 ?>">
-                                            <div class="card-body">
-                                                <p class="card-text">Clodansuper 700WP (Goi1 25g)</p>
-                                            </div>
+                                            <p class="card-text truncate">Clodansuper 700WP (Goi1 25g)</p>
                                         </div>
                                     </div>
                                     <div class="col-md-4 mb-3">
                                         <div class="card">
                                             <img class="img-fluid" alt="100%x280" src="<?php echo $thuoctruoc3 ?>">
-                                            <div class="card-body">
-                                                <p class="card-text">Clodansuper 700WP (Goi1 35g)</p>
-
-                                            </div>
+                                            <p class="card-text truncate">Clodansuper 700WP (Goi1 35g)</p>
                                         </div>
                                     </div>
 
@@ -101,29 +93,19 @@ $thuoctrusau5 = get_template_directory_uri() . "/asset/images/san-pham/Thuoc Tru
                                     <div class="col-md-4 mb-3">
                                         <div class="card">
                                             <img class="img-fluid" alt="100%x280" src="<?php echo $thuoctruoc4 ?>">
-                                            <div class="card-body">
-                                                <p class="card-text">Clodansuper 700WP (Tui 12g - Sua truc)</p>
-
-                                            </div>
-
+                                            <p class="card-text truncate">Clodansuper 700WP (Tui 12g - Sua truc)</p>
                                         </div>
                                     </div>
                                     <div class="col-md-4 mb-3">
                                         <div class="card">
                                             <img class="img-fluid" alt="100%x280" src="<?php echo $thuoctruoc5 ?>">
-                                            <div class="card-body">
-                                                <p class="card-text">Clodansuper 700WP (Tui 25g - Tang kich thuoc)</p>
-
-                                            </div>
+                                            <p class="card-text truncate">Clodansuper 700WP (Tui 25g - Tang kich thuoc)</p>
                                         </div>
                                     </div>
                                     <div class="col-md-4 mb-3">
                                         <div class="card">
                                             <img class="img-fluid" alt="100%x280" src="<?php echo $thuoctruoc1 ?>">
-                                            <div class="card-body">
-                                                <p class="card-text">Clodansuper 700WP (Goi 1kg - Oc Co)</p>
-
-                                            </div>
+                                            <p class="card-text truncate">Clodansuper 700WP (Goi 1kg - Oc Co)</p>
                                         </div>
                                     </div>
 
@@ -149,29 +131,19 @@ $thuoctrusau5 = get_template_directory_uri() . "/asset/images/san-pham/Thuoc Tru
                                     <div class="col-md-4 mb-3">
                                         <div class="card">
                                             <img class="img-fluid" alt="100%x280" src="<?php echo $thuoctruco1 ?>">
-                                            <div class="card-body">
-                                                <p class="card-text">Misaron 80WP (Goi 100g - Con Voi Rung)</p>
-
-                                            </div>
-
+                                            <p class="card-text truncate">Misaron 80WP (Goi 100g - Con Voi Rung)</p>
                                         </div>
                                     </div>
                                     <div class="col-md-4 mb-3">
                                         <div class="card">
                                             <img class="img-fluid" alt="100%x280" src="<?php echo $thuoctruco2 ?>">
-                                            <div class="card-body">
-                                                <p class="card-text">Nomicet 500WP (Goi 25g) + Sharon 100WP (Goi 15g)</p>
-
-                                            </div>
+                                            <p class="card-text truncate">Nomicet 500WP (Goi 25g) + Sharon 100WP (Goi 15g)</p>
                                         </div>
                                     </div>
                                     <div class="col-md-4 mb-3">
                                         <div class="card">
                                             <img class="img-fluid" alt="100%x280" src="<?php echo $thuoctruco3 ?>">
-                                            <div class="card-body">
-                                                <p class="card-text">Saco 600EC (CT 400ml - Co Cay)</p>
-
-                                            </div>
+                                            <p class="card-text truncate">Saco 600EC (CT 400ml - Co Cay)</p>
                                         </div>
                                     </div>
 
@@ -183,29 +155,19 @@ $thuoctrusau5 = get_template_directory_uri() . "/asset/images/san-pham/Thuoc Tru
                                     <div class="col-md-4 mb-3">
                                         <div class="card">
                                             <img class="img-fluid" alt="100%x280" src="<?php echo $thuoctruco4 ?>">
-                                            <div class="card-body">
-                                                <p class="card-text">Saco 600EC (CT2 75ml - Co Cay)</p>
-
-                                            </div>
-
+                                            <p class="card-text truncate">Saco 600EC (CT2 75ml - Co Cay)</p>
                                         </div>
                                     </div>
                                     <div class="col-md-4 mb-3">
                                         <div class="card">
                                             <img class="img-fluid" alt="100%x280" src="<?php echo $thuoctruco5 ?>">
-                                            <div class="card-body">
-                                                <p class="card-text">Sharon 100WP (Goi 5g - Doc)</p>
-
-                                            </div>
+                                            <p class="card-text truncate">Sharon 100WP (Goi 5g - Doc)</p>
                                         </div>
                                     </div>
                                     <div class="col-md-4 mb-3">
                                         <div class="card">
                                             <img class="img-fluid" alt="100%x280" src="<?php echo $thuoctruco1 ?>">
-                                            <div class="card-body">
-                                                <p class="card-text">Misaron 80WP (Goi 100g - Con Voi Rung)</p>
-
-                                            </div>
+                                            <p class="card-text truncate">Misaron 80WP (Goi 100g - Con Voi Rung)</p>
                                         </div>
                                     </div>
 
@@ -231,29 +193,19 @@ $thuoctrusau5 = get_template_directory_uri() . "/asset/images/san-pham/Thuoc Tru
                                     <div class="col-md-4 mb-3">
                                         <div class="card">
                                             <img class="img-fluid" alt="100%x280" src="<?php echo $thuoctrubenh1 ?>">
-                                            <div class="card-body">
-                                                <p class="card-text">Alphacol 700WP (Goi 400g - Suong mai, Than thu)</p>
-
-                                            </div>
-
+                                            <p class="card-text truncate">Alphacol 700WP (Goi 400g - Suong mai, Than thu)</p>
                                         </div>
                                     </div>
                                     <div class="col-md-4 mb-3">
                                         <div class="card">
                                             <img class="img-fluid" alt="100%x280" src="<?php echo $thuoctrubenh2 ?>">
-                                            <div class="card-body">
-                                                <p class="card-text">Goldbem 777WP (Goi 100g - 3 HC 3 SM)</p>
-
-                                            </div>
+                                            <p class="card-text truncate">Goldbem 777WP (Goi 100g - 3 HC 3 SM)</p>
                                         </div>
                                     </div>
                                     <div class="col-md-4 mb-3">
                                         <div class="card">
                                             <img class="img-fluid" alt="100%x280" src="<?php echo $thuoctrubenh3 ?>">
-                                            <div class="card-body">
-                                                <p class="card-text">Lervil 100SC (CT 450ml - Hexa Xanh)</p>
-
-                                            </div>
+                                            <p class="card-text truncate">Lervil 100SC (CT 450ml - Hexa Xanh)</p>
                                         </div>
                                     </div>
 
@@ -265,29 +217,19 @@ $thuoctrusau5 = get_template_directory_uri() . "/asset/images/san-pham/Thuoc Tru
                                     <div class="col-md-4 mb-3">
                                         <div class="card">
                                             <img class="img-fluid" alt="100%x280" src="<?php echo $thuoctrubenh4 ?>">
-                                            <div class="card-body">
-                                                <p class="card-text">Lervil 100SC (Goi 20ml - Hexa Xanh)</p>
-
-                                            </div>
-
+                                            <p class="card-text truncate">Lervil 100SC (Goi 20ml - Hexa Xanh)</p>
                                         </div>
                                     </div>
                                     <div class="col-md-4 mb-3">
                                         <div class="card">
                                             <img class="img-fluid" alt="100%x280" src="<?php echo $thuoctrubenh5 ?>">
-                                            <div class="card-body">
-                                                <p class="card-text">Supercin 40SL (CT 240ml)</p>
-
-                                            </div>
+                                            <p class="card-text truncate">Supercin 40SL (CT 240ml)</p>
                                         </div>
                                     </div>
                                     <div class="col-md-4 mb-3">
                                         <div class="card">
                                             <img class="img-fluid" alt="100%x280" src="<?php echo $thuoctrubenh1 ?>">
-                                            <div class="card-body">
-                                                <p class="card-text">Alphacol 700WP (Goi 400g - Suong mai, Than thu)</p>
-
-                                            </div>
+                                            <p class="card-text truncate">Alphacol 700WP (Goi 400g - Suong mai, Than thu)</p>
                                         </div>
                                     </div>
 
@@ -312,29 +254,19 @@ $thuoctrusau5 = get_template_directory_uri() . "/asset/images/san-pham/Thuoc Tru
                                     <div class="col-md-4 mb-3">
                                         <div class="card">
                                             <img class="img-fluid" alt="100%x280" src="<?php echo $thuoctrusau1 ?>">
-                                            <div class="card-body">
-                                                <p class="card-text">Aperlaur 700WG (Goi 15g - Checs Syn)</p>
-
-                                            </div>
-
+                                            <p class="card-text truncate">Aperlaur 700WG (Goi 15g - Checs Syn)</p>
                                         </div>
                                     </div>
                                     <div class="col-md-4 mb-3">
                                         <div class="card">
                                             <img class="img-fluid" alt="100%x280" src="<?php echo $thuoctrusau2 ?>">
-                                            <div class="card-body">
-                                                <p class="card-text">Bupte-HB 300WP (Goi 100g - Vua Ray, Bo Tri)</p>
-
-                                            </div>
+                                            <p class="card-text truncate">Bupte-HB 300WP (Goi 100g - Vua Ray, Bo Tri)</p>
                                         </div>
                                     </div>
                                     <div class="col-md-4 mb-3">
                                         <div class="card">
                                             <img class="img-fluid" alt="100%x280" src="<?php echo $thuoctrusau3 ?>">
-                                            <div class="card-body">
-                                                <p class="card-text">Daran-HB 250WP (Goi 40g - Super Ram)</p>
-
-                                            </div>
+                                            <p class="card-text truncate">Daran-HB 250WP (Goi 40g - Super Ram)</p>
                                         </div>
                                     </div>
 
@@ -346,29 +278,19 @@ $thuoctrusau5 = get_template_directory_uri() . "/asset/images/san-pham/Thuoc Tru
                                     <div class="col-md-4 mb-3">
                                         <div class="card">
                                             <img class="img-fluid" alt="100%x280" src="<?php echo $thuoctrusau4 ?>">
-                                            <div class="card-body">
-                                                <p class="card-text">Pyphos-HB 500EC (CT 250ml - Ho Gam)</p>
-
-                                            </div>
-
+                                            <p class="card-text truncate">Pyphos-HB 500EC (CT 250ml - Ho Gam)</p>
                                         </div>
                                     </div>
                                     <div class="col-md-4 mb-3">
                                         <div class="card">
                                             <img class="img-fluid" alt="100%x280" src="<?php echo $thuoctrusau5 ?>">
-                                            <div class="card-body">
-                                                <p class="card-text">Sedox 200EC (CT 450 - Chai Nhom)</p>
-
-                                            </div>
+                                            <p class="card-text truncate">Sedox 200EC (CT 450 - Chai Nhom)</p>
                                         </div>
                                     </div>
                                     <div class="col-md-4 mb-3">
                                         <div class="card">
                                             <img class="img-fluid" alt="100%x280" src="<?php echo $thuoctrusau1 ?>">
-                                            <div class="card-body">
-                                                <p class="card-text">Aperlaur 700WG (Goi 15g - Checs Syn)</p>
-
-                                            </div>
+                                            <p class="card-text truncate">Aperlaur 700WG (Goi 15g - Checs Syn)</p>
                                         </div>
                                     </div>
 
