@@ -339,3 +339,15 @@ ul {
     text-align: center;
     padding-top: 0.5rem;
 }
+
+.post-item {
+    margin-bottom: 1rem;
+}
+
+.post-item .post-title {
+    display: -webkit-box;
+    max-width: 100%;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
