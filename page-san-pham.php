@@ -88,7 +88,7 @@ get_header();
                 ?>
                     <div class="col-md-4 product-item">
                         <a href="<?php echo get_post_permalink(); ?>"><img class="product-image img-fluid" title="<?php the_title(); ?>" src="<?php echo wp_get_attachment_url($product->get_image_id()); ?>"></a>
-                        <p class="product-name"><a href="<?php echo get_post_permalink(); ?>"><?php echo $page; ?><?php the_title(); ?></a></p>
+                        <p class="product-name"><a href="<?php echo get_post_permalink(); ?>"><?php the_title(); ?></a></p>
                     </div>
                 <?php
                 endwhile;
