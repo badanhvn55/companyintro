@@ -1,38 +1,17 @@
 <?php
+$cat_param = (get_query_var('cat')) ? get_query_var('cat') : -1;
+$page_param = (get_query_var('product_data')) ? get_query_var('product_data') : 1;
+$rootURL = '/wordpress';
 get_header();
-
-$thuoctruoc1 = get_template_directory_uri() . "/asset/images/san-pham/Thuoc Tru Oc/Clodansuper 700WP (Goi 1kg - Oc Co)0.jpg";
-$thuoctruoc2 = get_template_directory_uri() . "/asset/images/san-pham/Thuoc Tru Oc/Clodansuper 700WP (Goi1 25g)0.jpg";
-$thuoctruoc3 = get_template_directory_uri() . "/asset/images/san-pham/Thuoc Tru Oc/Clodansuper 700WP (Goi1 35g)0.jpg";
-$thuoctruoc4 = get_template_directory_uri() . "/asset/images/san-pham/Thuoc Tru Oc/Clodansuper 700WP (Tui 12g - Sua truc)0.jpg";
-$thuoctruoc5 = get_template_directory_uri() . "/asset/images/san-pham/Thuoc Tru Oc/Clodansuper 700WP (Tui 25g - Tang kich thuoc)0.jpg";
-
-$thuoctruco1 = get_template_directory_uri() . "/asset/images/san-pham/Thuoc Tru Co/Misaron 80WP (Goi 100g - Con Voi Rung)0.jpg";
-$thuoctruco2 = get_template_directory_uri() . "/asset/images/san-pham/Thuoc Tru Co/Nomicet 500WP (Goi 25g) + Sharon 100WP (Goi 15g)0.jpg";
-$thuoctruco3 = get_template_directory_uri() . "/asset/images/san-pham/Thuoc Tru Co/Saco 600EC (CT 400ml - Co Cay 3D).jpg";
-$thuoctruco4 = get_template_directory_uri() . "/asset/images/san-pham/Thuoc Tru Co/Saco 600EC (CT2 75ml - Co Cay - 3D).jpg";
-$thuoctruco5 = get_template_directory_uri() . "/asset/images/san-pham/Thuoc Tru Co/Sharon 100WP (Goi 5g - Doc)0.jpg";
-
-$thuoctrubenh1 = get_template_directory_uri() . "/asset/images/san-pham/Thuoc Tru Benh/Alphacol 700WP (Goi 400g - Suong mai, Than thu)0.jpg";
-$thuoctrubenh2 = get_template_directory_uri() . "/asset/images/san-pham/Thuoc Tru Benh/Goldbem 777WP (Goi 100g - 3 HC 3 SM)0.jpg";
-$thuoctrubenh3 = get_template_directory_uri() . "/asset/images/san-pham/Thuoc Tru Benh/Lervil 100SC (CT 450ml - Hexa Xanh 3D).jpg";
-$thuoctrubenh4 = get_template_directory_uri() . "/asset/images/san-pham/Thuoc Tru Benh/Lervil 100SC (Goi 20ml - Hexa Xanh)0.jpg";
-$thuoctrubenh5 = get_template_directory_uri() . "/asset/images/san-pham/Thuoc Tru Benh/Supercin 40SL (CT 240ml 3D Do).jpg";
-
-$thuoctrusau1 = get_template_directory_uri() . "/asset/images/san-pham/Thuoc Tru Sau/Aperlaur 700WG (Goi 15g - Checs Syn)0.jpg";
-$thuoctrusau2 = get_template_directory_uri() . "/asset/images/san-pham/Thuoc Tru Sau/Bupte-HB 300WP (Goi 100g - Vua Ray, Bo Tri)0.jpg";
-$thuoctrusau3 = get_template_directory_uri() . "/asset/images/san-pham/Thuoc Tru Sau/Daran-HB 250WP (Goi 40g - Super Ram)0.jpg";
-$thuoctrusau4 = get_template_directory_uri() . "/asset/images/san-pham/Thuoc Tru Sau/Pyphos-HB 500EC (CT 250ml - Ho Gam - 3D).jpg";
-$thuoctrusau5 = get_template_directory_uri() . "/asset/images/san-pham/Thuoc Tru Sau/Sedox 200EC (CT 450 - Chai Nhom 3D).jpg";
 ?>
 
-<div class="container san_pham">
+<div class="container product-list">
     <div class="row">
         <div class="col-md-12">
             <div class="link-address">
-                <a href="/wordpress">Trang chủ</a>
+                <a href="<?php echo $rootURL; ?>">Trang chủ</a>
                 <span>></span>
-                <a href="">Sản phẩm</a>
+                <a href="<?php echo $rootURL; ?>/san-pham">Sản phẩm</a>
             </div>
         </div>
         <div class="col-md-3">
@@ -41,12 +20,39 @@ $thuoctrusau5 = get_template_directory_uri() . "/asset/images/san-pham/Thuoc Tru
                     <div class="box_menuLeft" id="box_menuLeft">
                         <div id="woocommerce_product_categories-2" class="widget woocommerce widget_product_categories" style="transform: translate(0px, 0px);">
                             <ul class="product-categories">
-                                <li><a href="#">Vật tư nông nghiệp</a>
-                                </li>
-                                <li><a href="#">Thực phẩm</a>
-                                </li>
-                                <li><a href="#">Dịch vụ</a>
-                                </li>
+                                <?php
+
+                                $taxonomy     = 'product_cat';
+                                $orderby      = 'name';
+                                $show_count   = 0;      // 1 for yes, 0 for no
+                                $pad_counts   = 0;      // 1 for yes, 0 for no
+                                $hierarchical = 1;      // 1 for yes, 0 for no  
+                                $title        = '';
+                                $empty        = 0;
+
+                                $args = array(
+                                    'taxonomy'     => $taxonomy,
+                                    'orderby'      => $orderby,
+                                    'show_count'   => $show_count,
+                                    'pad_counts'   => $pad_counts,
+                                    'hierarchical' => $hierarchical,
+                                    'title_li'     => $title,
+                                    'hide_empty'   => $empty
+                                );
+                                $all_categories = get_categories($args);
+                                foreach ($all_categories as $cat) {
+                                    if ($cat->name == 'Chưa phân loại') continue; // skip the no category
+                                    if ($cat_param == $cat->term_id) {
+                                ?>
+                                        <li class='active'><a href="<?php echo $rootURL; ?>/san-pham/?cat=<?php echo $cat->term_id; ?>"><?php echo $cat->name; ?></a>
+                                        <?php
+                                    } else {
+                                        ?>
+                                        <li><a href="<?php echo $rootURL; ?>/san-pham/?cat=<?php echo $cat->term_id; ?>"><?php echo $cat->name; ?></a>
+                                    <?php
+                                    }
+                                }
+                                    ?>
                             </ul>
                         </div>
                     </div>
@@ -54,254 +60,76 @@ $thuoctrusau5 = get_template_directory_uri() . "/asset/images/san-pham/Thuoc Tru
             </div>
         </div>
         <div class="col-md-9">
+            <div class="row">
+                <?php
+                $posts_per_page = 9;
+                $args1 = array(
+                    'post_type'      => 'product',
+                    'post_status'           => 'publish',
+                    'posts_per_page' => $posts_per_page,
+                    'offset' => $page_param,
+                );
 
-            <!-- Thuốc trừ ốc -->
-            <div class="box_newsHome">
-                <div class="box_title box-title-default">
-                    <a href="#">Thuốc trừ ốc</a>
-                </div>
-                <div class="slide_hinhanh" id="box_newsHome">
-                    <div class="carousel slide" data-ride="carousel">
-                        <div class="carousel-inner">
-                            <div class="carousel-item active">
-                                <div class="row">
+                $args2 = $cat_param == -1 ? array() : array(
+                    'tax_query'             => array(
+                        array(
+                            'taxonomy'      => 'product_cat',
+                            'field' => 'term_id', //This is optional, as it defaults to 'term_id'
+                            'terms'         => $cat_param,
+                            'operator'      => 'IN' // Possible values are 'IN', 'NOT IN', 'AND'.
+                        ),
+                    )
+                );
 
-                                    <div class="col-md-4 mb-3">
-                                        <div class="card">
-                                            <img class="img-fluid" alt="100%x280" src="<?php echo $thuoctruoc1 ?>">
-                                            <p class="card-text truncate">Clodansuper 700WP (Goi 1kg - Oc Co)</p>
-                                        </div>
-                                    </div>
-                                    <div class="col-md-4 mb-3">
-                                        <div class="card">
-                                            <img class="img-fluid" alt="100%x280" src="<?php echo $thuoctruoc2 ?>">
-                                            <p class="card-text truncate">Clodansuper 700WP (Goi1 25g)</p>
-                                        </div>
-                                    </div>
-                                    <div class="col-md-4 mb-3">
-                                        <div class="card">
-                                            <img class="img-fluid" alt="100%x280" src="<?php echo $thuoctruoc3 ?>">
-                                            <p class="card-text truncate">Clodansuper 700WP (Goi1 35g)</p>
-                                        </div>
-                                    </div>
+                $loop = new WP_Query(array_merge($args1, $args2));
 
-                                </div>
-                            </div>
-                            <div class="carousel-item">
-                                <div class="row">
-
-                                    <div class="col-md-4 mb-3">
-                                        <div class="card">
-                                            <img class="img-fluid" alt="100%x280" src="<?php echo $thuoctruoc4 ?>">
-                                            <p class="card-text truncate">Clodansuper 700WP (Tui 12g - Sua truc)</p>
-                                        </div>
-                                    </div>
-                                    <div class="col-md-4 mb-3">
-                                        <div class="card">
-                                            <img class="img-fluid" alt="100%x280" src="<?php echo $thuoctruoc5 ?>">
-                                            <p class="card-text truncate">Clodansuper 700WP (Tui 25g - Tang kich thuoc)</p>
-                                        </div>
-                                    </div>
-                                    <div class="col-md-4 mb-3">
-                                        <div class="card">
-                                            <img class="img-fluid" alt="100%x280" src="<?php echo $thuoctruoc1 ?>">
-                                            <p class="card-text truncate">Clodansuper 700WP (Goi 1kg - Oc Co)</p>
-                                        </div>
-                                    </div>
-
-                                </div>
-                            </div>
-                        </div>
+                while ($loop->have_posts()) : $loop->the_post();
+                    global $product;
+                ?>
+                    <div class="col-md-4 product-item">
+                        <a href="<?php echo get_post_permalink(); ?>"><img class="product-image img-fluid" title="<?php the_title(); ?>" src="<?php echo wp_get_attachment_url($product->get_image_id()); ?>"></a>
+                        <p class="product-name"><a href="<?php echo get_post_permalink(); ?>"><?php echo $page; ?><?php the_title(); ?></a></p>
                     </div>
-                </div>
+                <?php
+                endwhile;
+
+                // wp_reset_query();
+                ?>
+            </div>
+            <div class="row">
+                <ul id="border-pagination">
+                    <?php
+                    $args = array(
+                        'limit' => 4,
+                        'page' => $page_param,
+                    );
+                    $results = wc_get_products($args);
+                    for ($i = 0; $i < 5; $i++) {
+                        if ($page_param == $i) {
+                    ?>
+                            <li><a class="active" href="<?php echo $rootURL . '/san-pham?cat=' . $cat_param . '&product_data=' . $i ?>"><?php echo $i + 1; ?></a></li>
+                        <?php
+                        } else {
+                        ?>
+                            <li><a href="<?php echo $rootURL . '/san-pham?cat=' . $cat_param . '&product_data=' . $i ?>"><?php echo $i + 1; ?></a></li>
+                    <?php
+                        }
+                    }
+                    ?>
+                </ul>
             </div>
 
-
-            <!-- Thuốc trừ cỏ -->
-            <div class="box_newsHome">
-                <div class="box_title box-title-default">
-                    <a href="#">Thuốc trừ cỏ</a>
-                </div>
-                <div class="slide_hinhanh" id="box_newsHome">
-                    <div class="carousel slide" data-ride="carousel">
-                        <div class="carousel-inner">
-                            <div class="carousel-item active">
-                                <div class="row">
-
-                                    <div class="col-md-4 mb-3">
-                                        <div class="card">
-                                            <img class="img-fluid" alt="100%x280" src="<?php echo $thuoctruco1 ?>">
-                                            <p class="card-text truncate">Misaron 80WP (Goi 100g - Con Voi Rung)</p>
-                                        </div>
-                                    </div>
-                                    <div class="col-md-4 mb-3">
-                                        <div class="card">
-                                            <img class="img-fluid" alt="100%x280" src="<?php echo $thuoctruco2 ?>">
-                                            <p class="card-text truncate">Nomicet 500WP (Goi 25g) + Sharon 100WP (Goi 15g)</p>
-                                        </div>
-                                    </div>
-                                    <div class="col-md-4 mb-3">
-                                        <div class="card">
-                                            <img class="img-fluid" alt="100%x280" src="<?php echo $thuoctruco3 ?>">
-                                            <p class="card-text truncate">Saco 600EC (CT 400ml - Co Cay)</p>
-                                        </div>
-                                    </div>
-
-                                </div>
-                            </div>
-                            <div class="carousel-item">
-                                <div class="row">
-
-                                    <div class="col-md-4 mb-3">
-                                        <div class="card">
-                                            <img class="img-fluid" alt="100%x280" src="<?php echo $thuoctruco4 ?>">
-                                            <p class="card-text truncate">Saco 600EC (CT2 75ml - Co Cay)</p>
-                                        </div>
-                                    </div>
-                                    <div class="col-md-4 mb-3">
-                                        <div class="card">
-                                            <img class="img-fluid" alt="100%x280" src="<?php echo $thuoctruco5 ?>">
-                                            <p class="card-text truncate">Sharon 100WP (Goi 5g - Doc)</p>
-                                        </div>
-                                    </div>
-                                    <div class="col-md-4 mb-3">
-                                        <div class="card">
-                                            <img class="img-fluid" alt="100%x280" src="<?php echo $thuoctruco1 ?>">
-                                            <p class="card-text truncate">Misaron 80WP (Goi 100g - Con Voi Rung)</p>
-                                        </div>
-                                    </div>
-
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-
-            <!-- Thuốc trừ bệnh -->
-            <div class="box_newsHome">
-                <div class="box_title box-title-default">
-                    <a href="#">Thuốc trừ bệnh</a>
-                </div>
-                <div class="slide_hinhanh" id="box_newsHome">
-                    <div class="carousel slide" data-ride="carousel">
-                        <div class="carousel-inner">
-                            <div class="carousel-item active">
-                                <div class="row">
-
-                                    <div class="col-md-4 mb-3">
-                                        <div class="card">
-                                            <img class="img-fluid" alt="100%x280" src="<?php echo $thuoctrubenh1 ?>">
-                                            <p class="card-text truncate">Alphacol 700WP (Goi 400g - Suong mai, Than thu)</p>
-                                        </div>
-                                    </div>
-                                    <div class="col-md-4 mb-3">
-                                        <div class="card">
-                                            <img class="img-fluid" alt="100%x280" src="<?php echo $thuoctrubenh2 ?>">
-                                            <p class="card-text truncate">Goldbem 777WP (Goi 100g - 3 HC 3 SM)</p>
-                                        </div>
-                                    </div>
-                                    <div class="col-md-4 mb-3">
-                                        <div class="card">
-                                            <img class="img-fluid" alt="100%x280" src="<?php echo $thuoctrubenh3 ?>">
-                                            <p class="card-text truncate">Lervil 100SC (CT 450ml - Hexa Xanh)</p>
-                                        </div>
-                                    </div>
-
-                                </div>
-                            </div>
-                            <div class="carousel-item">
-                                <div class="row">
-
-                                    <div class="col-md-4 mb-3">
-                                        <div class="card">
-                                            <img class="img-fluid" alt="100%x280" src="<?php echo $thuoctrubenh4 ?>">
-                                            <p class="card-text truncate">Lervil 100SC (Goi 20ml - Hexa Xanh)</p>
-                                        </div>
-                                    </div>
-                                    <div class="col-md-4 mb-3">
-                                        <div class="card">
-                                            <img class="img-fluid" alt="100%x280" src="<?php echo $thuoctrubenh5 ?>">
-                                            <p class="card-text truncate">Supercin 40SL (CT 240ml)</p>
-                                        </div>
-                                    </div>
-                                    <div class="col-md-4 mb-3">
-                                        <div class="card">
-                                            <img class="img-fluid" alt="100%x280" src="<?php echo $thuoctrubenh1 ?>">
-                                            <p class="card-text truncate">Alphacol 700WP (Goi 400g - Suong mai, Than thu)</p>
-                                        </div>
-                                    </div>
-
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Thuốc trừ sâu -->
-            <div class="box_newsHome">
-                <div class="box_title box-title-default">
-                    <a href="#">Thuốc trừ sâu</a>
-                </div>
-                <div class="slide_hinhanh" id="box_newsHome">
-                    <div class="carousel slide" data-ride="carousel">
-                        <div class="carousel-inner">
-                            <div class="carousel-item active">
-                                <div class="row">
-
-                                    <div class="col-md-4 mb-3">
-                                        <div class="card">
-                                            <img class="img-fluid" alt="100%x280" src="<?php echo $thuoctrusau1 ?>">
-                                            <p class="card-text truncate">Aperlaur 700WG (Goi 15g - Checs Syn)</p>
-                                        </div>
-                                    </div>
-                                    <div class="col-md-4 mb-3">
-                                        <div class="card">
-                                            <img class="img-fluid" alt="100%x280" src="<?php echo $thuoctrusau2 ?>">
-                                            <p class="card-text truncate">Bupte-HB 300WP (Goi 100g - Vua Ray, Bo Tri)</p>
-                                        </div>
-                                    </div>
-                                    <div class="col-md-4 mb-3">
-                                        <div class="card">
-                                            <img class="img-fluid" alt="100%x280" src="<?php echo $thuoctrusau3 ?>">
-                                            <p class="card-text truncate">Daran-HB 250WP (Goi 40g - Super Ram)</p>
-                                        </div>
-                                    </div>
-
-                                </div>
-                            </div>
-                            <div class="carousel-item">
-                                <div class="row">
-
-                                    <div class="col-md-4 mb-3">
-                                        <div class="card">
-                                            <img class="img-fluid" alt="100%x280" src="<?php echo $thuoctrusau4 ?>">
-                                            <p class="card-text truncate">Pyphos-HB 500EC (CT 250ml - Ho Gam)</p>
-                                        </div>
-                                    </div>
-                                    <div class="col-md-4 mb-3">
-                                        <div class="card">
-                                            <img class="img-fluid" alt="100%x280" src="<?php echo $thuoctrusau5 ?>">
-                                            <p class="card-text truncate">Sedox 200EC (CT 450 - Chai Nhom)</p>
-                                        </div>
-                                    </div>
-                                    <div class="col-md-4 mb-3">
-                                        <div class="card">
-                                            <img class="img-fluid" alt="100%x280" src="<?php echo $thuoctrusau1 ?>">
-                                            <p class="card-text truncate">Aperlaur 700WG (Goi 15g - Checs Syn)</p>
-                                        </div>
-                                    </div>
-
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-
+            <?php // Get products with extra info about the results.
+            // $offset = 1;
+            // $args = array(
+            //     'limit' => 4,
+            //     'offset' => $page_param,
+            // );
+            // $results = wc_get_products($args);
+            // echo $results->total . ' products found\n';
+            // echo 'Page 1 of ' . $results->max_num_pages . '\n';
+            // echo 'First product id is: ' . $results->products[0]->get_id() . '\n';
+            ?>
         </div>
     </div>
 </div>

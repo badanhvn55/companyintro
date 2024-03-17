@@ -11,7 +11,7 @@
 
   <?php
   wp_head();
-
+  $rootURL = '/wordpress';
   $fEN = get_template_directory_uri() . "/asset/images/f-en.jpg";
   $fVN = get_template_directory_uri() . "/asset/images/f-vn.jpg";
   $logo = get_template_directory_uri() . "/asset/images/logo.png";
@@ -56,13 +56,13 @@
     <div class="collapse navbar-collapse" id="navbarNavDropdown">
       <ul class="navbar-nav">
         <li class="nav-item active">
-          <a class="nav-link" href="/wordpress">Trang chủ <span class="sr-only">(current)</span></a>
+          <a class="nav-link" href="<?php echo $rootURL; ?>">Trang chủ <span class="sr-only">(current)</span></a>
         </li>
         <li class="nav-item">
           <a class="nav-link" href="#">Giới thiệu</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">Tin tức</a>
+          <a class="nav-link" href="<?php echo $rootURL; ?>/tin-tuc">Tin tức</a>
         </li>
         <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -75,7 +75,7 @@
           </div>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="/wordpress/san-pham">Sản phẩm</a>
+          <a class="nav-link" href="<?php echo $rootURL; ?>/san-pham">Sản phẩm</a>
         </li>
         <li class="nav-item">
           <a class="nav-link" href="#">Quan hệ cổ đông</a>

@@ -1,4 +1,6 @@
 <?php
+$cat_param = (get_query_var('cat')) ? get_query_var('cat') : -1;
+$rootURL = '/wordpress';
 get_header();
 ?>
 
@@ -6,7 +8,7 @@ get_header();
     <div class="row">
         <div class="col-md-12">
             <div class="link-address">
-                <a href="/wordpress">Trang chủ</a>
+                <a href="<?php echo $rootURL; ?>">Trang chủ</a>
                 <span>></span>
                 <a href="">Tin tức</a>
             </div>
@@ -24,7 +26,7 @@ get_header();
                                 ));
                                 foreach ($categories as $category) {
                                     if ($category->term_id == 1) continue; // skip the no category
-                                    echo '<li><a href="/wordpress/tin-tuc/' . $category->term_id . '">' . $category->name . '</a></li>';
+                                    echo '<li><a href="' . $rootURL . '/tin-tuc?cat=' . $category->term_id . '">' . $category->name . '</a></li>';
                                 }
                                 ?>
                             </ul>
@@ -36,8 +38,7 @@ get_header();
         <div class="col-md-9">
             <?php
 
-            $paged = (get_query_var('paged')) ? absint(get_query_var('paged')) : 1;
-            $args = array(
+            $args1 = array(
                 // 'posts_per_page' => 1,
                 // 'cat' => 4,
                 // 'paged' => $paged,
@@ -47,20 +48,32 @@ get_header();
                 'order'    => 'DESC',
                 'posts_per_page' => -1 // this will retrive all the post that is published 
             );
-            $the_query = new WP_Query($args);
+
+            $args2 = $cat_param == -1 ? array() : array(
+                'tax_query'             => array(
+                    array(
+                        'taxonomy'      => 'product_cat',
+                        'field' => 'term_id', //This is optional, as it defaults to 'term_id'
+                        'terms'         => $cat_param,
+                        'operator'      => 'IN' // Possible values are 'IN', 'NOT IN', 'AND'.
+                    ),
+                )
+            );
+
+            $the_query = new WP_Query(array_merge($args1, $args2));
 
             if ($the_query->have_posts()) {
                 while ($the_query->have_posts()) {
                     $the_query->the_post();
                     $categories = get_the_category($post->ID);
                     $isExistCategory = count($categories) > 0;
-                    if ($isExistCategory && $categories[0]->term_id == 1) continue; // skip the no category
+                    if ($isExistCategory && $categories[0]->name == 'Chưa phân loại') continue; // skip the no category
             ?>
                     <div class="row post-item">
-                        <div class="col-md-3"><img width="100%" src="<?php echo get_the_post_thumbnail_url(); ?>" title="<?php the_title(); ?>"></div>
+                        <div class="col-md-3 post-thumbnail"><a href="<?php echo get_post_permalink(); ?>"><img width="100%" src="<?php echo get_the_post_thumbnail_url(); ?>" title="<?php the_title(); ?>"></a></div>
                         <div class="col-md-7">
-                            <p class="post-title"><?php the_title(); ?></p>
-                            <small><i class="fas fa-clock"></i>&nbsp;<?php the_date(); ?></small>
+                            <p class="post-title"><a href="<?php echo get_post_permalink(); ?>"><?php the_title(); ?></a></p>
+                            <small><i class="fas fa-clock"></i>&nbsp;<?php echo get_the_date(); ?></small>
                         </div>
                     </div>
                 <?php
@@ -68,7 +81,7 @@ get_header();
             } else {
                 ?>
                 <div>
-                    {CODE_XU_LY_KHI_KHONG_CO_BAI_VIET}
+                    Không có bài viết nào
                 </div>
             <?php
             }
