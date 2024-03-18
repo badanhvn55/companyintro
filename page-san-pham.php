@@ -41,7 +41,6 @@ get_header();
                                 );
                                 $all_categories = get_categories($args);
                                 foreach ($all_categories as $cat) {
-                                    if ($cat->name == 'Chưa phân loại') continue; // skip the no category
                                     if ($cat_param == $cat->term_id) {
                                 ?>
                                         <li class='active'><a href="<?php echo $rootURL; ?>/san-pham/?cat=<?php echo $cat->term_id; ?>"><?php echo $cat->name; ?></a>
@@ -93,7 +92,7 @@ get_header();
                 <?php
                 endwhile;
 
-                // wp_reset_query();
+                wp_reset_query();
                 ?>
             </div>
             <div class="row">

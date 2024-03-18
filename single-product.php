@@ -39,7 +39,6 @@ $rootURL = '/wordpress';
                                 );
                                 $all_categories = get_categories($args);
                                 foreach ($all_categories as $cat) {
-                                    if ($cat->name == 'Chưa phân loại') continue; // skip the no category
                                 ?>
                                     <li><a href="#"><?php echo $cat->name; ?></a>
                                     <?php

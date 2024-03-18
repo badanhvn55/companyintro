@@ -24,7 +24,6 @@ get_header();
                                     'parent'  => 0
                                 ));
                                 foreach ($categories as $category) {
-                                    if ($category->term_id == 1) continue; // skip the no category
                                     echo '<li><a href="' . $rootURL . '/tin-tuc/' . $category->term_id . '">' . $category->name . '</a></li>';
                                 }
                                 ?>

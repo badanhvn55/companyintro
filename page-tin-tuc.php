@@ -25,7 +25,6 @@ get_header();
                                     'parent'  => 0
                                 ));
                                 foreach ($categories as $category) {
-                                    if ($category->term_id == 1) continue; // skip the no category
                                     echo '<li><a href="' . $rootURL . '/tin-tuc?cat=' . $category->term_id . '">' . $category->name . '</a></li>';
                                 }
                                 ?>
@@ -67,7 +66,7 @@ get_header();
                     $the_query->the_post();
                     $categories = get_the_category($post->ID);
                     $isExistCategory = count($categories) > 0;
-                    if ($isExistCategory && $categories[0]->name == 'Chưa phân loại') continue; // skip the no category
+                    if (!$isExistCategory) continue; // skip the no category
             ?>
                     <div class="row post-item">
                         <div class="col-md-3 post-thumbnail"><a href="<?php echo get_post_permalink(); ?>"><img width="100%" src="<?php echo get_the_post_thumbnail_url(); ?>" title="<?php the_title(); ?>"></a></div>
