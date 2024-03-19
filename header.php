@@ -49,7 +49,7 @@
   </div>
 
   <nav class="container navbar navbar-expand-lg">
-    <a class="navbar-brand" href="#"><img width="150" src="<?php echo $logo ?>" /></a>
+    <a class="navbar-brand" href="<?php echo $rootURL; ?>"><img width="150" src="<?php echo $logo ?>" /></a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>

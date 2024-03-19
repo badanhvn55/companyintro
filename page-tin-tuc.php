@@ -10,7 +10,7 @@ get_header();
             <div class="link-address">
                 <a href="<?php echo $rootURL; ?>">Trang chủ</a>
                 <span>></span>
-                <a href="">Tin tức</a>
+                <a href="<?php echo $rootURL; ?>/tin-tuc">Tin tức</a>
             </div>
         </div>
         <div class="col-md-3">
@@ -68,10 +68,10 @@ get_header();
                     $isExistCategory = count($categories) > 0;
                     if (!$isExistCategory) continue; // skip the no category
             ?>
-                    <div class="row post-item">
-                        <div class="col-md-3 post-thumbnail"><a href="<?php echo get_post_permalink(); ?>"><img width="100%" src="<?php echo get_the_post_thumbnail_url(); ?>" title="<?php the_title(); ?>"></a></div>
-                        <div class="col-md-7">
-                            <p class="post-title"><a href="<?php echo get_post_permalink(); ?>"><?php the_title(); ?></a></p>
+                    <div class="row-item">
+                        <div class="row-thumbnail"><a href="<?php echo get_post_permalink(); ?>"><img src="<?php echo get_the_post_thumbnail_url(); ?>" title="<?php the_title(); ?>"></a></div>
+                        <div class="row-content">
+                            <p class="row-title"><a href="<?php echo get_post_permalink(); ?>"><?php the_title(); ?></a></p>
                             <small><i class="fas fa-clock"></i>&nbsp;<?php echo get_the_date(); ?></small>
                         </div>
                     </div>

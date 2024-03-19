@@ -66,7 +66,7 @@ get_header();
                     'post_type'      => 'product',
                     'post_status'           => 'publish',
                     'posts_per_page' => $posts_per_page,
-                    'offset' => $page_param,
+                    // 'offset' => $page_param,
                 );
 
                 $args2 = $cat_param == -1 ? array() : array(
@@ -85,9 +85,11 @@ get_header();
                 while ($loop->have_posts()) : $loop->the_post();
                     global $product;
                 ?>
-                    <div class="col-md-4 product-item">
-                        <a href="<?php echo get_post_permalink(); ?>"><img class="product-image img-fluid" title="<?php the_title(); ?>" src="<?php echo wp_get_attachment_url($product->get_image_id()); ?>"></a>
-                        <p class="product-name"><a href="<?php echo get_post_permalink(); ?>"><?php the_title(); ?></a></p>
+                    <div class="col-md-4">
+                        <div class="card-item">
+                            <a href="<?php echo get_post_permalink(); ?>"><img class="img-fluid" title="<?php the_title(); ?>" src="<?php echo wp_get_attachment_url($product->get_image_id()); ?>"></a>
+                            <p class="card-title"><a href="<?php echo get_post_permalink(); ?>"><?php the_title(); ?></a></p>
+                        </div>
                     </div>
                 <?php
                 endwhile;
@@ -98,19 +100,19 @@ get_header();
             <div class="row">
                 <ul id="border-pagination">
                     <?php
-                    $args = array(
-                        'limit' => 4,
-                        'page' => $page_param,
+                    $paginate_args = array(
+                        'paginate' => true,
                     );
-                    $results = wc_get_products($args);
-                    for ($i = 0; $i < 5; $i++) {
-                        if ($page_param == $i) {
+                    $paginate_result = wc_get_products($paginate_args);
+                    for ($i = 0; $i < $paginate_result->max_num_pages; $i++) {
+                        $page_number = $i + 1;
+                        if ($page_param == $page_number) {
                     ?>
-                            <li><a class="active" href="<?php echo $rootURL . '/san-pham?cat=' . $cat_param . '&product_data=' . $i ?>"><?php echo $i + 1; ?></a></li>
+                            <li><a class="active" href="<?php echo $rootURL . '/san-pham?cat=' . $cat_param . '&product_data=' . $i ?>"><?php echo $page_number; ?></a></li>
                         <?php
                         } else {
                         ?>
-                            <li><a href="<?php echo $rootURL . '/san-pham?cat=' . $cat_param . '&product_data=' . $i ?>"><?php echo $i + 1; ?></a></li>
+                            <li><a href="<?php echo $rootURL . '/san-pham?cat=' . $cat_param . '&product_data=' . $i ?>"><?php echo $page_number; ?></a></li>
                     <?php
                         }
                     }
@@ -118,11 +120,11 @@ get_header();
                 </ul>
             </div>
 
-            <?php // Get products with extra info about the results.
+            <?php 
+            // Get products with extra info about the results.
             // $offset = 1;
             // $args = array(
-            //     'limit' => 4,
-            //     'offset' => $page_param,
+            //     'paginate' => true,
             // );
             // $results = wc_get_products($args);
             // echo $results->total . ' products found\n';
