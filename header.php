@@ -59,7 +59,7 @@
           <a class="nav-link" href="<?php echo $rootURL; ?>">Trang chủ <span class="sr-only">(current)</span></a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">Giới thiệu</a>
+          <a class="nav-link" href="<?php echo $rootURL; ?>/gioi-thieu">Giới thiệu</a>
         </li>
         <li class="nav-item">
           <a class="nav-link" href="<?php echo $rootURL; ?>/tin-tuc">Tin tức</a>

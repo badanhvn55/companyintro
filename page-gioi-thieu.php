@@ -14,7 +14,7 @@ get_header();
             <div class="link-address">
                 <a href="<?php echo $rootURL; ?>">Trang chủ</a>
                 <span>></span>
-                <a href="">Tin tức</a>
+                <a href="">Giới thiệu</a>
             </div>
         </div>
         <div class="col-md-12 intro">

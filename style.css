@@ -242,6 +242,12 @@ ul {
 }
 
 
+
+.box_newsHome {
+    padding: 1rem;
+    background-color: var(--light);
+}
+
 .box_newsHome .box_title {
     text-transform: uppercase;
     font-weight: bold;
@@ -349,13 +355,15 @@ ul {
 }
 
 .product-list .product-image,
-.product-list .product-name {
+.product-list .product-name,
+.box_newsHome .box-content p {
     padding: 0.5rem 0;
 }
 
 .product-list .product-name a,
 .post-item .post-title a,
-.news-title a {
+.news-title a,
+.box_newsHome .box-content a {
     text-decoration: none;
     color: var(--dark);
 }
