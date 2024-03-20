@@ -283,9 +283,15 @@ ul {
     max-height: 360px;
 }
 
+.product-list .card-item {
+    margin-bottom: 1rem;
+}
+
 
 .product-item {
     display: flex;
+    gap: 2;
+    flex-direction: row;
     justify-content: center;
     align-items: center;
 }
@@ -295,8 +301,8 @@ ul {
 }
 
 .product-item .product-title {
-    flex: 1;
     color: var(--goldenrod);
+    font-weight: bold;
     text-transform: uppercase;
 }
 

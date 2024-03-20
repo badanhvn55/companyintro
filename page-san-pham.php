@@ -1,7 +1,7 @@
 <?php
-$cat_param = (get_query_var('cat')) ? get_query_var('cat') : -1;
-$page_param = (get_query_var('product_data')) ? get_query_var('product_data') : 1;
 $rootURL = '/wordpress';
+$cat_param = $_GET['cat'] ?? -1;
+$page_param = $_GET['offset'] ?? 1;
 get_header();
 ?>
 
@@ -61,46 +61,33 @@ get_header();
         <div class="col-md-9">
             <div class="row">
                 <?php
-                $posts_per_page = 9;
+                // Get products with extra info about the results.
+                $limit = 9;
                 $args1 = array(
-                    'post_type'      => 'product',
-                    'post_status'           => 'publish',
-                    'posts_per_page' => $posts_per_page,
-                    // 'offset' => $page_param,
+                    'limit' => $limit,
+                    'page' => intval($page_param),
                 );
-
-                $args2 = $cat_param == -1 ? array() : array(
-                    'tax_query'             => array(
-                        array(
-                            'taxonomy'      => 'product_cat',
-                            'field' => 'term_id', //This is optional, as it defaults to 'term_id'
-                            'terms'         => $cat_param,
-                            'operator'      => 'IN' // Possible values are 'IN', 'NOT IN', 'AND'.
-                        ),
-                    )
-                );
-
-                $loop = new WP_Query(array_merge($args1, $args2));
-
-                while ($loop->have_posts()) : $loop->the_post();
-                    global $product;
+                $args2 = $cat_param > -1 ? array(
+                    'product_category_id' => array($cat_param),
+                ) : array();
+                $products = wc_get_products(array_merge($args1, $args2));
+                foreach ($products as $product) :
                 ?>
                     <div class="col-md-4">
                         <div class="card-item">
-                            <a href="<?php echo get_post_permalink(); ?>"><img class="img-fluid" title="<?php the_title(); ?>" src="<?php echo wp_get_attachment_url($product->get_image_id()); ?>"></a>
-                            <p class="card-title"><a href="<?php echo get_post_permalink(); ?>"><?php the_title(); ?></a></p>
+                            <a href="<?php echo get_permalink($product->id); ?>"><img class="img-fluid" title="<?php echo $product->name; ?>" src="<?php echo wp_get_attachment_url($product->get_image_id()); ?>"></a>
+                            <p class="card-title"><a href="<?php echo get_permalink($product->id); ?>"><?php echo $product->name; ?></a></p>
                         </div>
                     </div>
                 <?php
-                endwhile;
-
-                wp_reset_query();
+                endforeach;
                 ?>
             </div>
             <div class="row">
                 <ul id="border-pagination">
                     <?php
                     $paginate_args = array(
+                        'limit' => $limit,
                         'paginate' => true,
                     );
                     $paginate_result = wc_get_products($paginate_args);
@@ -108,29 +95,17 @@ get_header();
                         $page_number = $i + 1;
                         if ($page_param == $page_number) {
                     ?>
-                            <li><a class="active" href="<?php echo $rootURL . '/san-pham?cat=' . $cat_param . '&product_data=' . $i ?>"><?php echo $page_number; ?></a></li>
+                            <li><a class="active" href="<?php echo $rootURL . '/san-pham?cat=' . $cat_param . '&offset=' . $page_number ?>"><?php echo $page_number; ?></a></li>
                         <?php
                         } else {
                         ?>
-                            <li><a href="<?php echo $rootURL . '/san-pham?cat=' . $cat_param . '&product_data=' . $i ?>"><?php echo $page_number; ?></a></li>
+                            <li><a href="<?php echo $rootURL . '/san-pham?cat=' . $cat_param . '&offset=' . $page_number ?>"><?php echo $page_number; ?></a></li>
                     <?php
                         }
                     }
                     ?>
                 </ul>
             </div>
-
-            <?php 
-            // Get products with extra info about the results.
-            // $offset = 1;
-            // $args = array(
-            //     'paginate' => true,
-            // );
-            // $results = wc_get_products($args);
-            // echo $results->total . ' products found\n';
-            // echo 'Page 1 of ' . $results->max_num_pages . '\n';
-            // echo 'First product id is: ' . $results->products[0]->get_id() . '\n';
-            ?>
         </div>
     </div>
 </div>

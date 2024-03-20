@@ -8,80 +8,91 @@
 	$nghiencuuvaphattrien = get_template_directory_uri() . "/asset/images/nghien-cuu-va-phat-trien.png";
 	$baovethucvat = get_template_directory_uri() . "/asset/images/bao-ve-thuc-vat.png";
 	$intro_news = get_template_directory_uri() . "/asset/images/intro-news.png";
+	$home1 = get_template_directory_uri() . "/asset/images/home1.jpg";
+	$home2 = get_template_directory_uri() . "/asset/images/home2.jpg";
+	$home3 = get_template_directory_uri() . "/asset/images/home3.jpg";
+	$home4 = get_template_directory_uri() . "/asset/images/home4.webp";
+	$home5 = get_template_directory_uri() . "/asset/images/home5.jpg";
+	$home6 = get_template_directory_uri() . "/asset/images/home6.jpg";
+	$home7 = get_template_directory_uri() . "/asset/images/home7.jpg";
+	$home8 = get_template_directory_uri() . "/asset/images/home8.jpg";
+	$home9 = get_template_directory_uri() . "/asset/images/home9.jpg";
 	?>
 
 	<div class="container">
 		<div class="row">
 			<div class="col-md-12 col-xs-12">
-				<div class="box_products">
-					<div class="row">
-						<div class="col-md-12">
-							<div class="carousel slide" data-ride="carousel">
+				<div class="row">
+					<div class="col-md-12">
+						<div class="box_products">
+							<div id="bikipnhanongCarouse" class="carousel slide" data-ride="carousel">
 								<div class="carousel-inner">
 									<div class="carousel-item active">
 										<div class="row">
-
 											<div class="col-md-3">
 												<div class="product-item">
-													<img class="img-fluid" src="<?php echo $thucpham ?>" />
+													<img class="img-fluid" src="<?php echo $thucpham ?>" width="70" />
 													<p class="product-title">Thực phẩm</p>
 												</div>
 											</div>
 											<div class="col-md-3">
 												<div class="product-item">
-													<img class="img-fluid" src="<?php echo $dichvu ?>" />
+													<img class="img-fluid" src="<?php echo $dichvu ?>" width="70" />
 													<p class="product-title">Dịch vụ</p>
 												</div>
 											</div>
 											<div class="col-md-3">
 												<div class="product-item">
-													<img class="img-fluid" src="<?php echo $chuoigiatri ?>" />
+													<img class="img-fluid" src="<?php echo $chuoigiatri ?>" width="70" />
 													<p class="product-title">Chuỗi giá trị</p>
 												</div>
 											</div>
 											<div class="col-md-3">
 												<div class="product-item">
-													<img class="img-fluid" src="<?php echo $cndrd ?>" />
+													<img class="img-fluid" src="<?php echo $cndrd ?>" width="70" />
 													<p class="product-title">Cùng nông dân ra đồng</p>
 												</div>
 											</div>
+
 										</div>
 									</div>
 									<div class="carousel-item">
 										<div class="row">
-
 											<div class="col-md-3">
 												<div class="product-item">
-													<img class="img-fluid" src="<?php echo $cndrd ?>" />
+													<img class="img-fluid" src="<?php echo $cndrd ?>" width="70" />
 													<p class="product-title">Cùng nông dân ra đồng</p>
 												</div>
 											</div>
 											<div class="col-md-3">
 												<div class="product-item">
-													<img class="img-fluid" src="<?php echo $nghiencuuvaphattrien ?>" />
+													<img class="img-fluid" src="<?php echo $nghiencuuvaphattrien ?>" width="70" />
 													<p class="product-title">Nghiên cứu và phát triển</p>
 												</div>
 											</div>
 											<div class="col-md-3">
 												<div class="product-item">
-													<img class="img-fluid" src="<?php echo $baovethucvat ?>" />
-													<p class="product-title">Bảo vệ thực vật</p>
+													<img class="img-fluid" src="<?php echo $nghiencuuvaphattrien ?>" width="70" />
+													<p class="product-title">Nghiên cứu và phát triển</p>
 												</div>
 											</div>
 											<div class="col-md-3">
 												<div class="product-item">
-													<img class="img-fluid" src="<?php echo $thucpham ?>" />
-													<p class="product-title">Thực phẩm</p>
+													<img class="img-fluid" src="<?php echo $baovethucvat ?>" width="70" />
+													<p class="product-title">Bảo vệ thực vật</p>
 												</div>
 											</div>
 										</div>
+
 									</div>
+
 								</div>
 							</div>
+
 						</div>
 					</div>
 				</div>
-				<div class="box_highlight box-d	efault">
+				<div class="box_highlight box-default">
 					<div class="row">
 						<div class="col-md-12">
 							<div class="box_newsHome">
@@ -158,8 +169,9 @@
 									<a href="#">Phát triển bên vững</a>
 								</div>
 								<div class="card-item">
-									<img class="img-fluid" alt="100%x280" src="https://images.unsplash.com/photo-1532781914607-2031eca2f00d?ixlib=rb-0.3.5&amp;q=80&amp;fm=jpg&amp;crop=entropy&amp;cs=tinysrgb&amp;w=1080&amp;fit=max&amp;ixid=eyJhcHBfaWQiOjMyMDc0fQ&amp;s=7c625ea379640da3ef2e24f20df7ce8d">
-									<p class="card-title">Special title treatment With supporting text below as a natural lead-in to additional content.
+									<img class="img-fluid" alt="" src="<?php echo $home3; ?>">
+									<p class="card-title"><a href="">Công ty CP Quốc Tế Hòa Bình</a>
+									</p>
 								</div>
 							</div>
 						</div>
@@ -170,8 +182,8 @@
 									<a href="#">Quan hệ cộng đồng</a>
 								</div>
 								<div class="card-item">
-									<img class="img-fluid" alt="100%x280" src="https://images.unsplash.com/photo-1532781914607-2031eca2f00d?ixlib=rb-0.3.5&amp;q=80&amp;fm=jpg&amp;crop=entropy&amp;cs=tinysrgb&amp;w=1080&amp;fit=max&amp;ixid=eyJhcHBfaWQiOjMyMDc0fQ&amp;s=7c625ea379640da3ef2e24f20df7ce8d">
-									<p class="card-title">Special title treatment With supporting text below as a natural lead-in to additional content.
+									<img class="img-fluid" alt="" src="<?php echo $home2; ?>">
+									<p class="card-title"><a href="">Công ty CP Quốc Tế Hòa Bình</a>
 									</p>
 								</div>
 							</div>
@@ -183,8 +195,8 @@
 									<a href="#">Media</a>
 								</div>
 								<div class="card-item">
-									<img class="img-fluid" alt="100%x280" src="https://images.unsplash.com/photo-1532781914607-2031eca2f00d?ixlib=rb-0.3.5&amp;q=80&amp;fm=jpg&amp;crop=entropy&amp;cs=tinysrgb&amp;w=1080&amp;fit=max&amp;ixid=eyJhcHBfaWQiOjMyMDc0fQ&amp;s=7c625ea379640da3ef2e24f20df7ce8d">
-									<p class="card-title">Special title treatment With supporting text below as a natural lead-in to additional content.
+									<img class="img-fluid" alt="" src="<?php echo $home3; ?>">
+									<p class="card-title"><a href="">Công ty CP Quốc Tế Hòa Bình</a>
 									</p>
 								</div>
 							</div>
@@ -202,35 +214,15 @@
 												<div class="row">
 													<div class="col-md-6 mb-3">
 														<div class="card-item">
-															<img class="img-fluid" alt="100%x280" src="https://images.unsplash.com/photo-1532781914607-2031eca2f00d?ixlib=rb-0.3.5&amp;q=80&amp;fm=jpg&amp;crop=entropy&amp;cs=tinysrgb&amp;w=1080&amp;fit=max&amp;ixid=eyJhcHBfaWQiOjMyMDc0fQ&amp;s=7c625ea379640da3ef2e24f20df7ce8d">
-															<p class="card-title">Special title treatment With supporting text below as a natural lead-in to additional content.
+															<img class="img-fluid" alt="" src="<?php echo $home4; ?>">
+															<p class="card-title"><a href="">Công ty CP Quốc Tế Hòa Bình</a>
 															</p>
 														</div>
 													</div>
 													<div class="col-md-6 mb-3">
 														<div class="card-item">
-															<img class="img-fluid" alt="100%x280" src="https://images.unsplash.com/photo-1532781914607-2031eca2f00d?ixlib=rb-0.3.5&amp;q=80&amp;fm=jpg&amp;crop=entropy&amp;cs=tinysrgb&amp;w=1080&amp;fit=max&amp;ixid=eyJhcHBfaWQiOjMyMDc0fQ&amp;s=7c625ea379640da3ef2e24f20df7ce8d">
-															<p class="card-title">Special title treatment With supporting text below as a natural lead-in to additional content.
-															</p>
-														</div>
-													</div>
-
-												</div>
-											</div>
-											<div class="carousel-item">
-												<div class="row">
-
-													<div class="col-md-6 mb-3">
-														<div class="card-item">
-															<img class="img-fluid" alt="100%x280" src="https://images.unsplash.com/photo-1532781914607-2031eca2f00d?ixlib=rb-0.3.5&amp;q=80&amp;fm=jpg&amp;crop=entropy&amp;cs=tinysrgb&amp;w=1080&amp;fit=max&amp;ixid=eyJhcHBfaWQiOjMyMDc0fQ&amp;s=7c625ea379640da3ef2e24f20df7ce8d">
-															<p class="card-title">Special title treatment With supporting text below as a natural lead-in to additional content.
-															</p>
-														</div>
-													</div>
-													<div class="col-md-6 mb-3">
-														<div class="card-item">
-															<img class="img-fluid" alt="100%x280" src="https://images.unsplash.com/photo-1532781914607-2031eca2f00d?ixlib=rb-0.3.5&amp;q=80&amp;fm=jpg&amp;crop=entropy&amp;cs=tinysrgb&amp;w=1080&amp;fit=max&amp;ixid=eyJhcHBfaWQiOjMyMDc0fQ&amp;s=7c625ea379640da3ef2e24f20df7ce8d">
-															<p class="card-title">Special title treatment With supporting text below as a natural lead-in to additional content.
+															<img class="img-fluid" alt="" src="<?php echo $home5; ?>">
+															<p class="card-title"><a href="">Công ty CP Quốc Tế Hòa Bình</a>
 															</p>
 														</div>
 													</div>
@@ -242,15 +234,35 @@
 
 													<div class="col-md-6 mb-3">
 														<div class="card-item">
-															<img class="img-fluid" alt="100%x280" src="https://images.unsplash.com/photo-1532781914607-2031eca2f00d?ixlib=rb-0.3.5&amp;q=80&amp;fm=jpg&amp;crop=entropy&amp;cs=tinysrgb&amp;w=1080&amp;fit=max&amp;ixid=eyJhcHBfaWQiOjMyMDc0fQ&amp;s=7c625ea379640da3ef2e24f20df7ce8d">
-															<p class="card-title">Special title treatment With supporting text below as a natural lead-in to additional content.
+															<img class="img-fluid" alt="" src="<?php echo $home6; ?>">
+															<p class="card-title"><a href="">Công ty CP Quốc Tế Hòa Bình</a>
 															</p>
 														</div>
 													</div>
 													<div class="col-md-6 mb-3">
 														<div class="card-item">
-															<img class="img-fluid" alt="100%x280" src="https://images.unsplash.com/photo-1532781914607-2031eca2f00d?ixlib=rb-0.3.5&amp;q=80&amp;fm=jpg&amp;crop=entropy&amp;cs=tinysrgb&amp;w=1080&amp;fit=max&amp;ixid=eyJhcHBfaWQiOjMyMDc0fQ&amp;s=7c625ea379640da3ef2e24f20df7ce8d">
-															<p class="card-title">Special title treatment With supporting text below as a natural lead-in to additional content.
+															<img class="img-fluid" alt="" src="<?php echo $home8; ?>">
+															<p class="card-title"><a href="">Công ty CP Quốc Tế Hòa Bình</a>
+															</p>
+														</div>
+													</div>
+
+												</div>
+											</div>
+											<div class="carousel-item">
+												<div class="row">
+
+													<div class="col-md-6 mb-3">
+														<div class="card-item">
+															<img class="img-fluid" alt="" src="<?php echo $home8; ?>">
+															<p class="card-title"><a href="">Công ty CP Quốc Tế Hòa Bình</a>
+															</p>
+														</div>
+													</div>
+													<div class="col-md-6 mb-3">
+														<div class="card-item">
+															<img class="img-fluid" alt="" src="<?php echo $home9; ?>">
+															<p class="card-title"><a href="">Công ty CP Quốc Tế Hòa Bình</a>
 															</p>
 														</div>
 													</div>
@@ -275,35 +287,15 @@
 												<div class="row">
 													<div class="col-md-6 mb-3">
 														<div class="card-item">
-															<img class="img-fluid" alt="100%x280" src="https://images.unsplash.com/photo-1532781914607-2031eca2f00d?ixlib=rb-0.3.5&amp;q=80&amp;fm=jpg&amp;crop=entropy&amp;cs=tinysrgb&amp;w=1080&amp;fit=max&amp;ixid=eyJhcHBfaWQiOjMyMDc0fQ&amp;s=7c625ea379640da3ef2e24f20df7ce8d">
-															<p class="card-title">Special title treatment With supporting text below as a natural lead-in to additional content.
+															<img class="img-fluid" alt="" src="<?php echo $home4; ?>">
+															<p class="card-title"><a href="">Công ty CP Quốc Tế Hòa Bình</a>
 															</p>
 														</div>
 													</div>
 													<div class="col-md-6 mb-3">
 														<div class="card-item">
-															<img class="img-fluid" alt="100%x280" src="https://images.unsplash.com/photo-1532781914607-2031eca2f00d?ixlib=rb-0.3.5&amp;q=80&amp;fm=jpg&amp;crop=entropy&amp;cs=tinysrgb&amp;w=1080&amp;fit=max&amp;ixid=eyJhcHBfaWQiOjMyMDc0fQ&amp;s=7c625ea379640da3ef2e24f20df7ce8d">
-															<p class="card-title">Special title treatment With supporting text below as a natural lead-in to additional content.
-															</p>
-														</div>
-													</div>
-
-												</div>
-											</div>
-											<div class="carousel-item">
-												<div class="row">
-
-													<div class="col-md-6 mb-3">
-														<div class="card-item">
-															<img class="img-fluid" alt="100%x280" src="https://images.unsplash.com/photo-1532781914607-2031eca2f00d?ixlib=rb-0.3.5&amp;q=80&amp;fm=jpg&amp;crop=entropy&amp;cs=tinysrgb&amp;w=1080&amp;fit=max&amp;ixid=eyJhcHBfaWQiOjMyMDc0fQ&amp;s=7c625ea379640da3ef2e24f20df7ce8d">
-															<p class="card-title">Special title treatment With supporting text below as a natural lead-in to additional content.
-															</p>
-														</div>
-													</div>
-													<div class="col-md-6 mb-3">
-														<div class="card-item">
-															<img class="img-fluid" alt="100%x280" src="https://images.unsplash.com/photo-1532781914607-2031eca2f00d?ixlib=rb-0.3.5&amp;q=80&amp;fm=jpg&amp;crop=entropy&amp;cs=tinysrgb&amp;w=1080&amp;fit=max&amp;ixid=eyJhcHBfaWQiOjMyMDc0fQ&amp;s=7c625ea379640da3ef2e24f20df7ce8d">
-															<p class="card-title">Special title treatment With supporting text below as a natural lead-in to additional content.
+															<img class="img-fluid" alt="" src="<?php echo $home5; ?>">
+															<p class="card-title"><a href="">Công ty CP Quốc Tế Hòa Bình</a>
 															</p>
 														</div>
 													</div>
@@ -315,15 +307,35 @@
 
 													<div class="col-md-6 mb-3">
 														<div class="card-item">
-															<img class="img-fluid" alt="100%x280" src="https://images.unsplash.com/photo-1532781914607-2031eca2f00d?ixlib=rb-0.3.5&amp;q=80&amp;fm=jpg&amp;crop=entropy&amp;cs=tinysrgb&amp;w=1080&amp;fit=max&amp;ixid=eyJhcHBfaWQiOjMyMDc0fQ&amp;s=7c625ea379640da3ef2e24f20df7ce8d">
-															<p class="card-title">Special title treatment With supporting text below as a natural lead-in to additional content.
+															<img class="img-fluid" alt="" src="<?php echo $home6; ?>">
+															<p class="card-title"><a href="">Công ty CP Quốc Tế Hòa Bình</a>
 															</p>
 														</div>
 													</div>
 													<div class="col-md-6 mb-3">
 														<div class="card-item">
-															<img class="img-fluid" alt="100%x280" src="https://images.unsplash.com/photo-1532781914607-2031eca2f00d?ixlib=rb-0.3.5&amp;q=80&amp;fm=jpg&amp;crop=entropy&amp;cs=tinysrgb&amp;w=1080&amp;fit=max&amp;ixid=eyJhcHBfaWQiOjMyMDc0fQ&amp;s=7c625ea379640da3ef2e24f20df7ce8d">
-															<p class="card-title">Special title treatment With supporting text below as a natural lead-in to additional content.
+															<img class="img-fluid" alt="" src="<?php echo $home8; ?>">
+															<p class="card-title"><a href="">Công ty CP Quốc Tế Hòa Bình</a>
+															</p>
+														</div>
+													</div>
+
+												</div>
+											</div>
+											<div class="carousel-item">
+												<div class="row">
+
+													<div class="col-md-6 mb-3">
+														<div class="card-item">
+															<img class="img-fluid" alt="" src="<?php echo $home8; ?>">
+															<p class="card-title"><a href="">Công ty CP Quốc Tế Hòa Bình</a>
+															</p>
+														</div>
+													</div>
+													<div class="col-md-6 mb-3">
+														<div class="card-item">
+															<img class="img-fluid" alt="" src="<?php echo $home9; ?>">
+															<p class="card-title"><a href="">Công ty CP Quốc Tế Hòa Bình</a>
 															</p>
 														</div>
 													</div>
