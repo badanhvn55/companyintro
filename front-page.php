@@ -3,7 +3,7 @@
 	$rootURL = '/wordpress';
 	?>
 
-	<div class="container">
+	<div class="container py-4">
 		<div class="row">
 			<?php
 
@@ -32,10 +32,17 @@
 				// get the image URL
 				$image = wp_get_attachment_url($thumbnail_id);
 			?>
-				<div class="col-md-6 py-4">
-					<a href="<?php echo $rootURL . '/san-pham?category=' . $cat->name . '&paginate=1' ?>"><img class="w-100" src="<?php echo $image; ?>" alt=""></a>
+				<div class="col-md-6 py-2">
+					<figure style="height: 600px;" class="snip0023">
+						<img style="height: 600px;" class="w-100" src="<?php echo $image; ?>" alt="">
+						<div>
+							<i class="fa fa-arrow-right" aria-hidden="true"></i>
+							<div class="curl"></div>
+							<a href="<?php echo $rootURL . '/san-pham?category=' . $cat->name . '&paginate=1' ?>"></a>
+						</div>
+					</figure>
 					<a href="<?php echo $rootURL . '/san-pham?category=' . $cat->name . '&paginate=1' ?>">
-						<h4 class="text-blue font-weight-bold text-uppercase text-ellipsis py-2"><?php echo $cat->name; ?></h4>
+						<h4 class="text-blue font-weight-bold text-uppercase text-ellipsis p-2"><?php echo $cat->name; ?></h4>
 					</a>
 				</div>
 			<?php

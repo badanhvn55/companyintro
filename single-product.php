@@ -23,11 +23,11 @@ $rootURL = '/wordpress';
                         if ($i == 0) :
                     ?>
                             <div data-target="#produccarouselindicators" data-slide-to="<?php echo $i; ?>" class="active">
-                                <img class="cursor-pointer" width="100" src="<?php echo wp_get_attachment_url($attachment_ids[$i]); ?>" alt="">
+                                <img style="width: 100px; height: 150px;" class="cursor-pointer" src="<?php echo wp_get_attachment_url($attachment_ids[$i]); ?>" alt="">
                             </div>
                         <?php else : ?>
                             <div data-target="#produccarouselindicators" data-slide-to="<?php echo $i; ?>" class="">
-                                <img class="cursor-pointer" width="100" src="<?php echo wp_get_attachment_url($attachment_ids[$i]); ?>" alt="">
+                                <img style="width: 100px; height: 150px;" class="cursor-pointer" src="<?php echo wp_get_attachment_url($attachment_ids[$i]); ?>" alt="">
                             </div>
                     <?php
                         endif;

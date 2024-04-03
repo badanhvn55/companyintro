@@ -7,11 +7,11 @@ get_header();
     <div class="row">
         <div class="col-md-12">
             <?php if (have_posts()) : while (have_posts()) : the_post(); ?>
-                    <div class="post-title">
+                    <h4 class="text-ellipsis text-blue">
                         <?php the_title(); ?>
-                    </div>
+                    </h4>
                     <?php the_content(); ?>
-                    <small class="post-created"><?php echo get_the_date(); ?></small>
+                    <small><i><?php echo get_the_date(); ?></i></small>
 
                 <?php endwhile; ?>
             <?php endif; ?>

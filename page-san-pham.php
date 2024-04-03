@@ -8,59 +8,62 @@ get_header();
 <div class="container py-2">
     <div class="row">
         <div class="col-md-12 bg-blue-active py-2 my-4">
-            <h3 class="text-uppercase text-white font-weight-bold"><?php echo $cat_param; ?></h3>
+            <h4 class="text-uppercase text-white font-weight-bold"><?php echo $cat_param; ?></h4>
         </div>
-        <?php
-        // Default arguments
-        $args = array(
-            'status'            => array('publish'),
-            // 'type'              => array_merge(array_keys(wc_get_product_types())),
-            // 'parent'            => null,
-            // 'sku'               => '',
-            'category'          => array($cat_param),
-            'tag'               => array(),
-            // 'limit'             => get_option('posts_per_page'),  // -1 for unlimited
-            'limit'             => 12,
-            // 'offset'            => null,
-            'page'              => $page_param,
-            'include'           => array(),
-            'exclude'           => array(),
-            'orderby'           => 'date',
-            'order'             => 'DESC',
-            'return'            => 'objects',
-            // 'paginate'          => false,
-            // 'shipping_class'    => array(),
-        );
+        <div class="col-md-12">
+            <div class="row">
+                <?php
+                // Default arguments
+                $args = array(
+                    'status'            => array('publish'),
+                    // 'type'              => array_merge(array_keys(wc_get_product_types())),
+                    // 'parent'            => null,
+                    // 'sku'               => '',
+                    'category'          => array($cat_param),
+                    'tag'               => array(),
+                    // 'limit'             => get_option('posts_per_page'),  // -1 for unlimited
+                    'limit'             => 12,
+                    // 'offset'            => null,
+                    'page'              => $page_param,
+                    'include'           => array(),
+                    'exclude'           => array(),
+                    'orderby'           => 'date',
+                    'order'             => 'DESC',
+                    'return'            => 'objects',
+                    // 'paginate'          => false,
+                    // 'shipping_class'    => array(),
+                );
 
-        // Array of product objects
-        $products = wc_get_products($args);
+                // Array of product objects
+                $products = wc_get_products($args);
 
-        if (count($products) > 0) {
+                if (count($products) > 0) {
 
-            // Loop through list of products
-            foreach ($products as $product) :
+                    // Loop through list of products
+                    foreach ($products as $product) :
 
-                // Collect product variables
-                $product_id   = $product->get_id();
-                $product_name = $product->get_name();
+                        // Collect product variables
+                        $product_id   = $product->get_id();
+                        $product_name = $product->get_name();
 
-        ?>
-                <div class="col-md-3 py-2 px-1 border bg-light">
-                    <a href="<?php echo get_permalink($product->id); ?>"><img class="w-100" title="<?php echo $product->name; ?>" src="<?php echo wp_get_attachment_url($product->get_image_id()); ?>"></a>
-                    <p class="text-ellipsis font-weight-bold pt-2"><a class="text-dark" href="<?php echo get_permalink($product->id); ?>"><?php echo $product->name; ?></a></p>
-                    <a href="<?php echo get_permalink($product->id); ?>" class="btn btn-primary rounded-pill py-1 my-0">Xem thêm</a>
-                </div>
-            <?php
+                ?>
+                        <div class="col-md-3 card-item p-2 border-bottom">
+                            <a href="<?php echo get_permalink($product->id); ?>"><img style="height: 400px;" class="w-100" title="<?php echo $product->name; ?>" src="<?php echo wp_get_attachment_url($product->get_image_id()); ?>"></a>
+                            <p class="text-ellipsis font-weight-bold pt-2"><a class="text-dark" href="<?php echo get_permalink($product->id); ?>"><?php echo $product->name; ?></a></p>
+                        </div>
+                    <?php
 
-            endforeach;
-        } else {
-            ?>
-            <div class="col-md-12 py-2">
-                Không có sản phẩm nào
+                    endforeach;
+                } else {
+                    ?>
+                    <div class="col-md-12 py-2">
+                        Không có sản phẩm nào
+                    </div>
+                <?php
+                }
+                ?>
             </div>
-        <?php
-        }
-        ?>
+        </div>
         <div class="col-md-12 d-flex p-4">
             <ul id="border-pagination" class="p-4">
                 <?php

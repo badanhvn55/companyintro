@@ -91,7 +91,7 @@
               <a class="dropdown-item py-2" href="#">Tư vấn kỹ thuật</a>
               <div class="dropdown-item">
                 <form class="form-inline">
-                  <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search">
+                  <input class="form-control mr-sm-2" type="text" placeholder="Tìm kiếm" aria-label="Search">
                 </form>
               </div>
             </div>
