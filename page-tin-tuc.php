@@ -1,5 +1,6 @@
 <?php
 $rootURL = '/wordpress';
+$page_param = $_GET['current'] ?? 1;
 get_header();
 ?>
 
@@ -8,14 +9,12 @@ get_header();
         <?php
 
         $args = array(
-            // 'posts_per_page' => 1,
-            // 'cat' => 4,
-            // 'paged' => $paged,
+            'paged' => $page_param,
             'post_type' => 'post',
             'orderby'    => 'ID',
             'post_status' => 'publish',
             'order'    => 'DESC',
-            'posts_per_page' => -1 // this will retrive all the post that is published 
+            'posts_per_page' => 12 // this will retrive all the post that is published 
         );
 
         $the_query = new WP_Query($args);
@@ -40,7 +39,30 @@ get_header();
         }
         wp_reset_query();
         ?>
-
+        <div class="col-md-12 d-flex p-4">
+            <ul id="border-pagination">
+                <?php
+                $paginate_args = array(
+                    'status'            => array('publish'),
+                    'limit'             => 12,
+                    'paginate' => true,
+                );
+                $paginate_result = wc_get_products($paginate_args);
+                for ($i = 0; $i < $the_query->max_num_pages; $i++) {
+                    $page_number = $i + 1;
+                    if ($page_param == $page_number) {
+                ?>
+                        <li><a class="active" href="<?php echo $rootURL . '/tin-tuc?current=' . $page_number ?>"><?php echo $page_number; ?></a></li>
+                    <?php
+                    } else {
+                    ?>
+                        <li><a href="<?php echo $rootURL . '/tin-tuc?current=' . $page_number ?>"><?php echo $page_number; ?></a></li>
+                <?php
+                    }
+                }
+                ?>
+            </ul>
+        </div>
     </div>
 </div>
 

@@ -1,7 +1,7 @@
 <?php
 $rootURL = '/wordpress';
 $cat_param = $_GET['category'] ?? 'Thuốc trừ sâu';
-$page_param = $_GET['paginate'] ?? -1;
+$page_param = $_GET['paginate'] ?? 1;
 get_header();
 ?>
 
@@ -61,29 +61,31 @@ get_header();
         <?php
         }
         ?>
-        <ul id="border-pagination" class="p-4">
-            <?php
-            $paginate_args = array(
-                'status'            => array('publish'),
-                'category'          => array($cat_param),
-                'limit'             => 12,
-                'paginate' => true,
-            );
-            $paginate_result = wc_get_products($paginate_args);
-            for ($i = 0; $i < $paginate_result->max_num_pages; $i++) {
-                $page_number = $i + 1;
-                if ($page_param == $page_number) {
-            ?>
-                    <li><a class="active" href="<?php echo $rootURL . '/san-pham?category=' . $cat_param . '&paginate=' . $page_number ?>"><?php echo $page_number; ?></a></li>
+        <div class="col-md-12 d-flex p-4">
+            <ul id="border-pagination" class="p-4">
                 <?php
-                } else {
+                $paginate_args = array(
+                    'status'            => array('publish'),
+                    'category'          => array($cat_param),
+                    'limit'             => 12,
+                    'paginate' => true,
+                );
+                $paginate_result = wc_get_products($paginate_args);
+                for ($i = 0; $i < $paginate_result->max_num_pages; $i++) {
+                    $page_number = $i + 1;
+                    if ($page_param == $page_number) {
                 ?>
-                    <li><a href="<?php echo $rootURL . '/san-pham?category=' . $cat_param . '&paginate=' . $page_number ?>"><?php echo $page_number; ?></a></li>
-            <?php
+                        <li><a class="active" href="<?php echo $rootURL . '/san-pham?category=' . $cat_param . '&paginate=' . $page_number ?>"><?php echo $page_number; ?></a></li>
+                    <?php
+                    } else {
+                    ?>
+                        <li><a href="<?php echo $rootURL . '/san-pham?category=' . $cat_param . '&paginate=' . $page_number ?>"><?php echo $page_number; ?></a></li>
+                <?php
+                    }
                 }
-            }
-            ?>
-        </ul>
+                ?>
+            </ul>
+        </div>
     </div>
 </div>
 
