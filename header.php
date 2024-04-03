@@ -12,6 +12,8 @@
   <?php
   wp_head();
   $rootURL = '/wordpress';
+  $slug = basename(get_permalink());
+  $isHomeActive = $slug != 'san-pham' && $slug != 'gioi-thieu' && $slug != 'tin-tuc' && $slug != 'lien-he';
   $fEN = get_template_directory_uri() . "/asset/images/f-en.jpg";
   $fVN = get_template_directory_uri() . "/asset/images/f-vn.jpg";
   $logo = get_template_directory_uri() . "/asset/images/logo.png";
@@ -28,65 +30,86 @@
 </head>
 
 <body>
-  <div class="navbar-fixed-top hidden-xs hidden-sm hidden-md">
-    <header class="header large-header">
-      <div class="header-top">
-        <div class="container">
-          <ul class="pull-right">
-            <li><a href="#"><i class="fas fa-map"></i>Sitemap</a></li>
-            <li><a href="#"><i class="fas fa-map"></i>Hạt Ngọc Trời</a></li>
-            <li><a href="#"><i class="fas fa-map"></i>Hương Vị Trời</a></li>
-            <li><a href="#"><i class="fas fa-map"></i>Quản Nông Xanh</a></li>
-            <li><a href="#"><i class="fas fa-map"></i>Tuyển Dụng</a></li>
-            <li><a href="#"><i class="fas fa-envelope"></i>Liên Hệ</a></li>
-            <li><a href="#"><img src="<?php echo $fEN ?>" width="25" /></a></li>
-            <li><a href="#"><img src="<?php echo $fVN ?>" width="25" /></a></li>
-          </ul>
+  <div class="container py-3 navbar-fixed-top hidden-xs hidden-sm hidden-md">
+    <div class="d-flex flex-row justify-content-between align-items-center">
+      <a class="navbar-brand" href="<?php echo $rootURL; ?>"><img width="150" src="<?php echo $logo ?>" /></a>
+      <div class="d-flex flex-row justify-content-center align-items-center">
+        <div class="mx-4 p-2 border rounded-pill">
+          <span class="text-danger font-weight-bold">Hotline: 0999 999 999</span>
+        </div>
+        <div class="switch-language font-weight-bold">
+          <a class="mr-2" href="#"><span class="text-dark">VI</span></a>
+          <a href="#"><span class="text-secondary">EN</span></a>
         </div>
       </div>
-      <div class="header-bottom"></div>
-    </header>
+    </div>
   </div>
 
-  <nav class="container navbar navbar-expand-lg">
-    <a class="navbar-brand" href="<?php echo $rootURL; ?>"><img width="150" src="<?php echo $logo ?>" /></a>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarNavDropdown">
-      <ul class="navbar-nav">
-        <li class="nav-item active">
-          <a class="nav-link" href="<?php echo $rootURL; ?>">Trang chủ <span class="sr-only">(current)</span></a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="<?php echo $rootURL; ?>/gioi-thieu">Giới thiệu</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="<?php echo $rootURL; ?>/tin-tuc">Tin tức</a>
-        </li>
-        <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-            Chuyển đổi số
-          </a>
-          <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-            <a class="dropdown-item" href="#">Action</a>
-            <a class="dropdown-item" href="#">Another action</a>
-            <a class="dropdown-item" href="#">Something else here</a>
-          </div>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="<?php echo $rootURL; ?>/san-pham">Sản phẩm</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">Quan hệ cổ đông</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">Phát triển bền vững</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">Media</a>
-        </li>
-      </ul>
+  <!--Navbar blue-->
+  <nav class="navbar p-0 navbar-expand-lg bg-blue">
+    <div class="container">
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <i class="fa fa-bars text-white" aria-hidden="true"></i>  
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item dropdown <?php echo $slug == 'san-pham' ? 'active' : ''; ?>">
+            <a class="nav-link py-3 pl-1 pr-5 cursor-pointer block text-white dropdown-toggle" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Danh mục sản phẩm
+            </a>
+            <div class="dropdown-menu dropdown-primary" aria-labelledby="navbarDropdownMenuLink">
+              <?php
+
+              $taxonomy     = 'product_cat';
+              $orderby      = 'name';
+              $show_count   = 0;      // 1 for yes, 0 for no
+              $pad_counts   = 0;      // 1 for yes, 0 for no
+              $hierarchical = 1;      // 1 for yes, 0 for no  
+              $title        = '';
+              $empty        = 0;
+
+              $args = array(
+                'taxonomy'     => $taxonomy,
+                'orderby'      => $orderby,
+                'show_count'   => $show_count,
+                'pad_counts'   => $pad_counts,
+                'hierarchical' => $hierarchical,
+                'title_li'     => $title,
+                'hide_empty'   => $empty
+              );
+              $all_categories = get_categories($args);
+              foreach ($all_categories as $cat) :
+                // get the thumbnail id using the queried category term_id
+                $thumbnail_id = get_woocommerce_term_meta($cat->term_id, 'thumbnail_id', true);
+
+                // get the image URL
+                $image = wp_get_attachment_url($thumbnail_id);
+              ?>
+                <a class="dropdown-item py-2 d-flex flex-row justify-content-between align-items-center" href="<?php echo $rootURL . '/san-pham?category=' . $cat->name . '&paginate=1' ?>"><span><?php echo $cat->name; ?></span><i class="fa fa-caret-right h4" aria-hidden="true"></i></a>
+              <?php
+              endforeach;
+              ?>
+              <a class="dropdown-item py-2" href="#">Tư vấn kỹ thuật</a>
+              <div class="dropdown-item">
+                <form class="form-inline">
+                  <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search">
+                </form>
+              </div>
+            </div>
+          </li>
+          <li class="nav-item <?php echo $isHomeActive ? 'active' : ''; ?>">
+            <a class="nav-link py-3 px-5 block text-white" href="<?php echo $rootURL; ?>">Trang chủ <span class="sr-only">(current)</span></a>
+          </li>
+          <li class="nav-item <?php echo $slug == 'gioi-thieu' ? 'active' : ''; ?>">
+            <a class="nav-link py-3 px-5 block text-white" href="<?php echo $rootURL; ?>/gioi-thieu">Giới thiệu</a>
+          </li>
+          <li class="nav-item <?php echo $slug == 'tin-tuc' ? 'active' : ''; ?>">
+            <a class="nav-link py-3 px-5 block text-white" href="<?php echo $rootURL; ?>/tin-tuc">Tin tức</a>
+          </li>
+          <li class="nav-item <?php echo $slug == 'lien-he' ? 'active' : ''; ?>">
+            <a class="nav-link py-3 px-5 block text-white" href="<?php echo $rootURL; ?>/lien-he">Liên hệ</a>
+          </li>
+        </ul>
+      </div>
     </div>
   </nav>
 

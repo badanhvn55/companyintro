@@ -1,112 +1,89 @@
 <?php
 $rootURL = '/wordpress';
-$cat_param = $_GET['cat'] ?? -1;
-$page_param = $_GET['offset'] ?? 1;
+$cat_param = $_GET['category'] ?? 'Thuốc trừ sâu';
+$page_param = $_GET['paginate'] ?? -1;
 get_header();
 ?>
 
-<div class="container product-list">
+<div class="container py-2">
     <div class="row">
-        <div class="col-md-12">
-            <div class="link-address">
-                <a href="<?php echo $rootURL; ?>">Trang chủ</a>
-                <span>></span>
-                <a href="<?php echo $rootURL; ?>/san-pham">Sản phẩm</a>
-            </div>
+        <div class="col-md-12 bg-blue-active py-2 my-4">
+            <h3 class="text-uppercase text-white font-weight-bold"><?php echo $cat_param; ?></h3>
         </div>
-        <div class="col-md-3">
-            <div class="box_sidebar">
-                <div class="sidebar_content">
-                    <div class="box_menuLeft" id="box_menuLeft">
-                        <div id="woocommerce_product_categories-2" class="widget woocommerce widget_product_categories" style="transform: translate(0px, 0px);">
-                            <ul class="product-categories">
-                                <?php
+        <?php
+        // Default arguments
+        $args = array(
+            'status'            => array('publish'),
+            // 'type'              => array_merge(array_keys(wc_get_product_types())),
+            // 'parent'            => null,
+            // 'sku'               => '',
+            'category'          => array($cat_param),
+            'tag'               => array(),
+            // 'limit'             => get_option('posts_per_page'),  // -1 for unlimited
+            'limit'             => 12,
+            // 'offset'            => null,
+            'page'              => $page_param,
+            'include'           => array(),
+            'exclude'           => array(),
+            'orderby'           => 'date',
+            'order'             => 'DESC',
+            'return'            => 'objects',
+            // 'paginate'          => false,
+            // 'shipping_class'    => array(),
+        );
 
-                                $taxonomy     = 'product_cat';
-                                $orderby      = 'name';
-                                $show_count   = 0;      // 1 for yes, 0 for no
-                                $pad_counts   = 0;      // 1 for yes, 0 for no
-                                $hierarchical = 1;      // 1 for yes, 0 for no  
-                                $title        = '';
-                                $empty        = 0;
+        // Array of product objects
+        $products = wc_get_products($args);
 
-                                $args = array(
-                                    'taxonomy'     => $taxonomy,
-                                    'orderby'      => $orderby,
-                                    'show_count'   => $show_count,
-                                    'pad_counts'   => $pad_counts,
-                                    'hierarchical' => $hierarchical,
-                                    'title_li'     => $title,
-                                    'hide_empty'   => $empty
-                                );
-                                $all_categories = get_categories($args);
-                                foreach ($all_categories as $cat) {
-                                    if ($cat_param == $cat->term_id) {
-                                ?>
-                                        <li class='active'><a href="<?php echo $rootURL; ?>/san-pham/?cat=<?php echo $cat->term_id; ?>"><?php echo $cat->name; ?></a>
-                                        <?php
-                                    } else {
-                                        ?>
-                                        <li><a href="<?php echo $rootURL; ?>/san-pham/?cat=<?php echo $cat->term_id; ?>"><?php echo $cat->name; ?></a>
-                                    <?php
-                                    }
-                                }
-                                    ?>
-                            </ul>
-                        </div>
-                    </div>
+        if (count($products) > 0) {
+
+            // Loop through list of products
+            foreach ($products as $product) :
+
+                // Collect product variables
+                $product_id   = $product->get_id();
+                $product_name = $product->get_name();
+
+        ?>
+                <div class="col-md-3 py-2 px-1 border bg-light">
+                    <a href="<?php echo get_permalink($product->id); ?>"><img class="w-100" title="<?php echo $product->name; ?>" src="<?php echo wp_get_attachment_url($product->get_image_id()); ?>"></a>
+                    <p class="text-ellipsis font-weight-bold pt-2"><a class="text-dark" href="<?php echo get_permalink($product->id); ?>"><?php echo $product->name; ?></a></p>
+                    <a href="<?php echo get_permalink($product->id); ?>" class="btn btn-primary rounded-pill py-1 my-0">Xem thêm</a>
                 </div>
+            <?php
+
+            endforeach;
+        } else {
+            ?>
+            <div class="col-md-12 py-2">
+                Không có sản phẩm nào
             </div>
-        </div>
-        <div class="col-md-9">
-            <div class="row">
+        <?php
+        }
+        ?>
+        <ul id="border-pagination" class="p-4">
+            <?php
+            $paginate_args = array(
+                'status'            => array('publish'),
+                'category'          => array($cat_param),
+                'limit'             => 12,
+                'paginate' => true,
+            );
+            $paginate_result = wc_get_products($paginate_args);
+            for ($i = 0; $i < $paginate_result->max_num_pages; $i++) {
+                $page_number = $i + 1;
+                if ($page_param == $page_number) {
+            ?>
+                    <li><a class="active" href="<?php echo $rootURL . '/san-pham?category=' . $cat_param . '&paginate=' . $page_number ?>"><?php echo $page_number; ?></a></li>
                 <?php
-                // Get products with extra info about the results.
-                $limit = 9;
-                $args1 = array(
-                    'limit' => $limit,
-                    'page' => intval($page_param),
-                );
-                $args2 = $cat_param > -1 ? array(
-                    'product_category_id' => array($cat_param),
-                ) : array();
-                $products = wc_get_products(array_merge($args1, $args2));
-                foreach ($products as $product) :
+                } else {
                 ?>
-                    <div class="col-md-4">
-                        <div class="card-item">
-                            <a href="<?php echo get_permalink($product->id); ?>"><img class="img-fluid" title="<?php echo $product->name; ?>" src="<?php echo wp_get_attachment_url($product->get_image_id()); ?>"></a>
-                            <p class="card-title"><a href="<?php echo get_permalink($product->id); ?>"><?php echo $product->name; ?></a></p>
-                        </div>
-                    </div>
-                <?php
-                endforeach;
-                ?>
-            </div>
-            <div class="row">
-                <ul id="border-pagination">
-                    <?php
-                    $paginate_args = array(
-                        'limit' => $limit,
-                        'paginate' => true,
-                    );
-                    $paginate_result = wc_get_products($paginate_args);
-                    for ($i = 0; $i < $paginate_result->max_num_pages; $i++) {
-                        $page_number = $i + 1;
-                        if ($page_param == $page_number) {
-                    ?>
-                            <li><a class="active" href="<?php echo $rootURL . '/san-pham?cat=' . $cat_param . '&offset=' . $page_number ?>"><?php echo $page_number; ?></a></li>
-                        <?php
-                        } else {
-                        ?>
-                            <li><a href="<?php echo $rootURL . '/san-pham?cat=' . $cat_param . '&offset=' . $page_number ?>"><?php echo $page_number; ?></a></li>
-                    <?php
-                        }
-                    }
-                    ?>
-                </ul>
-            </div>
-        </div>
+                    <li><a href="<?php echo $rootURL . '/san-pham?category=' . $cat_param . '&paginate=' . $page_number ?>"><?php echo $page_number; ?></a></li>
+            <?php
+                }
+            }
+            ?>
+        </ul>
     </div>
 </div>
 

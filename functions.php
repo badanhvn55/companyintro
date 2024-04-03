@@ -32,10 +32,10 @@ add_action('wp_enqueue_scripts', 'companyintro_register_styles');
 
 function companyintro_register_scripts() {
     $version = wp_get_theme()->get('Version');
-    wp_enqueue_script('companyintro-jquery', 'https://code.jquery.com/jquery-3.4.1.slim.min.js', array(), '3.4.1', true);
+    // wp_enqueue_script('companyintro-jquery', 'https://code.jquery.com/jquery-3.4.1.slim.min.js', array(), '3.4.1', true);
     wp_enqueue_script('companyintro-popper', 'https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js', array(), '1.16.0', true);
     wp_enqueue_script('companyintro-bootstrap-js', 'https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js', array(), '4.4.1', true);
-    wp_enqueue_script('companyintro-main', get_template_directory_uri() . "/asset/js/main.js", array(), $version, true);
+    // wp_enqueue_script('companyintro-main', get_template_directory_uri() . "/asset/js/main.js", array(), $version, true);
 }
 
 add_action('wp_enqueue_scripts', 'companyintro_register_scripts');

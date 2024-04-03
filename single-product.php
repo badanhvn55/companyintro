@@ -3,130 +3,94 @@ get_header();
 $rootURL = '/wordpress';
 ?>
 
-<div class="container product">
+<div class="container py-4">
     <div class="row">
-        <div class="col-md-12">
-            <div class="link-address">
-                <a href="<?php echo $rootURL; ?>">Trang chủ</a>
-                <span>></span>
-                <a href="<?php echo $rootURL; ?>/san-pham">Sản phẩm</a>
-            </div>
+        <div class="col-md-12 py-2">
+            <h4 class='text-blue font-weight-bold text-ellipsis'>
+                <?php
+                $product = wc_get_product();
+                $terms = wp_get_post_terms( $product->id, 'product_cat' );
+                echo $terms[0]->name . ' - ' . $product->name;
+                ?>
+            </h4>
         </div>
-        <div class="col-md-3">
-            <div class="box_sidebar">
-                <div class="sidebar_content">
-                    <div class="box_menuLeft" id="box_menuLeft">
-                        <div id="woocommerce_product_categories-2" class="widget woocommerce widget_product_categories" style="transform: translate(0px, 0px);">
-                            <ul class="product-categories">
-                                <?php
-
-                                $taxonomy     = 'product_cat';
-                                $orderby      = 'name';
-                                $show_count   = 0;      // 1 for yes, 0 for no
-                                $pad_counts   = 0;      // 1 for yes, 0 for no
-                                $hierarchical = 1;      // 1 for yes, 0 for no  
-                                $title        = '';
-                                $empty        = 0;
-
-                                $args = array(
-                                    'taxonomy'     => $taxonomy,
-                                    'orderby'      => $orderby,
-                                    'show_count'   => $show_count,
-                                    'pad_counts'   => $pad_counts,
-                                    'hierarchical' => $hierarchical,
-                                    'title_li'     => $title,
-                                    'hide_empty'   => $empty
-                                );
-                                $all_categories = get_categories($args);
-                                foreach ($all_categories as $cat) {
-                                ?>
-                                    <li><a href="#"><?php echo $cat->name; ?></a>
-                                    <?php
-                                }
-                                    ?>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="col-md-9">
-            <div class="row">
-                <div class="col-md-12">
-                    <h5 class='product-name'><?php the_title(); ?></h5>
-                </div>
-                <div class="col-md-6">
+        <div class="col-md-6">
+            <div id="produccarouselindicators" class="carousel slide" data-ride="carousel" data-interval="3000">
+                <div class="carousel-indicators d-flex flex-row justify-content-around items-center">
                     <?php
-                    $product = wc_get_product();
                     $attachment_ids = $product->get_gallery_image_ids();
+                    for ($i = 0; $i < count($attachment_ids); $i++) :
+                        if ($i == 0) :
                     ?>
-                    <div class="product__images">
-                        <img src="<?php echo wp_get_attachment_url($attachment_ids[0]); ?>" class="product__main-image" id="main-image" />
-
-                        <div class="product__slider-wrap">
-                            <div class="product__slider">
-                                <?php
-                                foreach ($attachment_ids as $attachment_id) {
-                                    if ($attachment_ids[0] == $attachment_id) :
-                                ?>
-                                        <img src="<?php echo wp_get_attachment_url($attachment_id); ?>" class="product__image product__image--active" />
-                                    <?php else : ?>
-                                        <img src="<?php echo wp_get_attachment_url($attachment_id); ?>" class="product__image" />
-                                <?php
-                                    endif;
-                                }
-                                ?>
+                            <div data-target="#produccarouselindicators" data-slide-to="<?php echo $i; ?>" class="active">
+                                <img class="cursor-pointer" width="100" src="<?php echo wp_get_attachment_url($attachment_ids[$i]); ?>" alt="">
                             </div>
-                        </div>
-                    </div>
+                        <?php else : ?>
+                            <div data-target="#produccarouselindicators" data-slide-to="<?php echo $i; ?>" class="">
+                                <img class="cursor-pointer" width="100" src="<?php echo wp_get_attachment_url($attachment_ids[$i]); ?>" alt="">
+                            </div>
+                    <?php
+                        endif;
+                    endfor;
+                    ?>
                 </div>
-                <div class="col-md-6">
-                    <p class="font-weight-bold text-uppercase">Đặc tính</p>
-                    <table>
-                        <tr>
-                            <th>Hoạt chất</th>
-                            <td><?php echo $product->get_attribute('hoat_chat'); ?></td>
-                        </tr>
-                        <tr>
-                            <th>Quy cách</th>
-                            <td><?php echo $product->get_attribute('quy_cach'); ?></td>
-                        </tr>
-                        <tr>
-                            <th>Kích thước</th>
-                            <td><?php echo $product->get_attribute('kich_thuoc'); ?></td>
-                        </tr>
-                        <tr>
-                            <th>Chất liệu</th>
-                            <td><?php echo $product->get_attribute('chat_lieu'); ?></td>
-                        </tr>
-                    </table>
-                    <div class="description mt-3">
-                        <?php the_content(); ?>
-                    </div>
+                <div class="carousel-inner bg-gray">
+                    <?php
+                    foreach ($attachment_ids as $attachment_id) :
+                        if ($attachment_ids[0] == $attachment_id) :
+                    ?>
+                            <div class="carousel-item active">
+                                <img style="height: 600px;" class="w-100" src="<?php echo wp_get_attachment_url($attachment_id); ?>" alt="">
+                            </div>
+                        <?php else : ?>
+                            <div class="carousel-item">
+                                <img style="height: 600px;" class="w-100" src="<?php echo wp_get_attachment_url($attachment_id); ?>" alt="Second slide">
+                            </div>
+                    <?php
+                        endif;
+                    endforeach;
+                    ?>
                 </div>
             </div>
-
-
+        </div>
+        <div class="col-md-6">
+            <div class="d-flex flex-column gap-2">
+                <?php
+                if ($product->get_attribute('cach_dung')) :
+                ?>
+                    <div class="border-bottom">
+                        <h4 class='font-weight-bold'>
+                            Cách dùng
+                        </h4>
+                        <p><?php echo $product->get_attribute('cach_dung'); ?></p>
+                    </div>
+                <?php
+                endif;
+                if ($product->get_attribute('dac_tri')) :
+                ?>
+                    <div class="border-bottom">
+                        <h4 class='font-weight-bold'>
+                            Đặc trị
+                        </h4>   
+                        <p><?php echo $product->get_attribute('dac_tri'); ?></p>
+                    </div>
+                <?php
+                endif;
+                if ($product->get_attribute('loi_ich')) :
+                ?>
+                    <div>
+                        <h4 class='font-weight-bold'>
+                            Lợi ích
+                        </h4>
+                        <p><?php echo $product->get_attribute('loi_ich'); ?></p>
+                    </div>
+                <?php
+                endif;
+                ?>
+            </div>
         </div>
     </div>
 </div>
-
-<script>
-    const mainImage = document.getElementById("main-image");
-    const images = document.querySelectorAll(".product__image");
-
-    images.forEach((image) => {
-        image.addEventListener("click", (event) => {
-            mainImage.src = event.target.src;
-
-            document
-                .querySelector(".product__image--active")
-                .classList.remove("product__image--active");
-
-            event.target.classList.add("product__image--active");
-        });
-    });
-</script>
 
 <?php
 get_footer();
