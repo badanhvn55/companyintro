@@ -1,15 +1,12 @@
 <?php
 $rootURL = '/wordpress';
-$cat_param = $_GET['category'] ?? 'Thuốc trừ sâu';
+$text_param = $_GET['text'] ?? '';
 $page_param = $_GET['paginate'] ?? 1;
 get_header();
 ?>
 
 <div class="container py-2">
     <div class="row">
-        <div class="col-md-12 bg-blue py-2 my-4">
-            <h4 class="text-uppercase text-white font-weight-bold"><?php echo $cat_param; ?></h4>
-        </div>
         <div class="col-md-12">
             <div class="row">
                 <?php
@@ -19,7 +16,7 @@ get_header();
                     // 'type'              => array_merge(array_keys(wc_get_product_types())),
                     // 'parent'            => null,
                     // 'sku'               => '',
-                    'category'          => array($cat_param),
+                    's'                 => $text_param,
                     'tag'               => array(),
                     // 'limit'             => get_option('posts_per_page'),  // -1 for unlimited
                     'limit'             => 12,
@@ -40,13 +37,19 @@ get_header();
                 // products paginate
                 $paginate_args = array(
                     'status'            => array('publish'),
-                    'category'          => array($cat_param),
+                    's'                 => $text_param,
                     'limit'             => 12,
-                    'paginate' => true,
+                    'paginate'          => true,
                 );
                 $paginate_result = wc_get_products($paginate_args);
 
                 if (count($products) > 0) {
+
+                ?>
+                    <div class="col-md-12 bg-blue py-2 my-4">
+                        <h4 class="text-uppercase text-white font-weight-bold font-italic">Kết quả tìm kiếm <span class="text-warning">(<?php echo $paginate_result->total; ?>)</span></h4>
+                    </div>
+                    <?php
 
                     // Loop through list of products
                     foreach ($products as $product) :
@@ -55,7 +58,7 @@ get_header();
                         $product_id   = $product->get_id();
                         $product_name = $product->get_name();
 
-                ?>
+                    ?>
                         <div class="col-md-3 card-item p-2 border-bottom" title="<?php echo $product->name; ?>">
                             <a href="<?php echo get_permalink($product->id); ?>"><img style="height: 400px;" class="w-100" src="<?php echo wp_get_attachment_url($product->get_image_id()); ?>"></a>
                             <p class="text-ellipsis font-weight-bold pt-2"><a class="text-dark" href="<?php echo get_permalink($product->id); ?>"><?php echo $product->name; ?></a></p>
@@ -80,11 +83,11 @@ get_header();
                     $page_number = $i + 1;
                     if ($page_param == $page_number) {
                 ?>
-                        <li><a class="active" href="<?php echo $rootURL . '/san-pham?category=' . $cat_param . '&paginate=' . $page_number ?>"><?php echo $page_number; ?></a></li>
+                        <li><a class="active" href="<?php echo $rootURL . '/tim-kiem?text=' . $text_param . '&paginate=' . $page_number; ?>"><?php echo $page_number; ?></a></li>
                     <?php
                     } else {
                     ?>
-                        <li><a href="<?php echo $rootURL . '/san-pham?category=' . $cat_param . '&paginate=' . $page_number ?>"><?php echo $page_number; ?></a></li>
+                        <li><a href="<?php echo $rootURL . '/tim-kiem?text=' . $text_param . '&paginate=' . $page_number; ?>"><?php echo $page_number; ?></a></li>
                 <?php
                     }
                 }

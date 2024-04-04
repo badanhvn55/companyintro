@@ -12,8 +12,8 @@
   <?php
   wp_head();
   $rootURL = '/wordpress';
-  $slug = basename(get_permalink());
-  $isHomeActive = $slug != 'san-pham' && $slug != 'gioi-thieu' && $slug != 'tin-tuc' && $slug != 'lien-he';
+  $urls = explode('/', $_SERVER['REQUEST_URI']);
+  $slugName = $urls[2];
   $fEN = get_template_directory_uri() . "/asset/images/f-en.jpg";
   $fVN = get_template_directory_uri() . "/asset/images/f-vn.jpg";
   $logo = get_template_directory_uri() . "/asset/images/logo.png";
@@ -53,7 +53,7 @@
       </button>
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav mr-auto">
-          <li class="nav-item dropdown <?php echo $slug == 'san-pham' ? 'active' : ''; ?>">
+          <li class="nav-item dropdown <?php echo $slugName == 'san-pham' ? 'active' : ''; ?>">
             <a class="nav-link py-3 pl-1 pr-5 cursor-pointer block text-white dropdown-toggle" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Danh mục sản phẩm
             </a>
             <div class="dropdown-menu dropdown-primary" aria-labelledby="navbarDropdownMenuLink">
@@ -90,22 +90,22 @@
               ?>
               <a class="dropdown-item py-2" href="#">Tư vấn kỹ thuật</a>
               <div class="dropdown-item">
-                <form class="form-inline">
-                  <input class="form-control mr-sm-2" type="text" placeholder="Tìm kiếm" aria-label="Search">
+                <form class="form-inline" action="<?php echo $rootURL; ?>/tim-kiem">
+                  <input class="form-control mr-sm-2" type="text" name="text" placeholder="Tìm kiếm" aria-label="Search">
                 </form>
               </div>
             </div>
           </li>
-          <li class="nav-item <?php echo $isHomeActive ? 'active' : ''; ?>">
+          <li class="nav-item <?php echo $slugName == '' ? 'active' : ''; ?>">
             <a class="nav-link py-3 px-5 block text-white" href="<?php echo $rootURL; ?>">Trang chủ <span class="sr-only">(current)</span></a>
           </li>
-          <li class="nav-item <?php echo $slug == 'gioi-thieu' ? 'active' : ''; ?>">
+          <li class="nav-item <?php echo $slugName == 'gioi-thieu' ? 'active' : ''; ?>">
             <a class="nav-link py-3 px-5 block text-white" href="<?php echo $rootURL; ?>/gioi-thieu">Giới thiệu</a>
           </li>
-          <li class="nav-item <?php echo $slug == 'tin-tuc' ? 'active' : ''; ?>">
+          <li class="nav-item <?php echo $slugName == 'tin-tuc' ? 'active' : ''; ?>">
             <a class="nav-link py-3 px-5 block text-white" href="<?php echo $rootURL; ?>/tin-tuc">Tin tức</a>
           </li>
-          <li class="nav-item <?php echo $slug == 'lien-he' ? 'active' : ''; ?>">
+          <li class="nav-item <?php echo $slugName == 'lien-he' ? 'active' : ''; ?>">
             <a class="nav-link py-3 px-5 block text-white" href="<?php echo $rootURL; ?>/lien-he">Liên hệ</a>
           </li>
         </ul>

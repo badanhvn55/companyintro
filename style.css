@@ -162,10 +162,24 @@ a:hover {
 
 
 
+.card-item {
+    background: var(--gray);
+    border-radius: 2px;
+    display: inline-block;
+    position: relative;
+}
+
+.card-item img {
+    box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+    transition: all 0.3s cubic-bezier(.25,.8,.25,1);
+}
+
+
 /* Animation */
 .card-item:hover img {
     transform: translate(-15px, -15px);
     transition: .5s cubic-bezier(.5, .03, .41, 1);
+    box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
 }
 
 .card-item:hover p:after {
@@ -184,7 +198,6 @@ a:hover {
     transform: scale3d(0, 1, 1);
     transition: .5s cubic-bezier(.5, .03, .41, 1);
 }
-
 
 
 figure.snip0023 {

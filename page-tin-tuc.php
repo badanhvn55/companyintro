@@ -4,7 +4,7 @@ $page_param = $_GET['current'] ?? 1;
 get_header();
 ?>
 
-<div class="container">
+<div class="container py-4">
     <div class="row">
         <?php
 
@@ -23,8 +23,8 @@ get_header();
             while ($the_query->have_posts()) {
                 $the_query->the_post();
         ?>
-                <div class="col-md-4 card-item py-4">
-                    <a href="<?php echo get_post_permalink(); ?>"><img class="w-100" src="<?php echo get_the_post_thumbnail_url(); ?>" title="<?php the_title(); ?>"></a>
+                <div class="col-md-4 card-item py-4" title="<?php the_title(); ?>">
+                    <a href="<?php echo get_post_permalink(); ?>"><img class="w-100" src="<?php echo get_the_post_thumbnail_url(); ?>"></a>
                     <div class="pt-2"><small><i><i class="fas fa-clock"></i>&nbsp;<?php echo get_the_date(); ?></i></small></div>
                     <p class="font-weight-bold text-ellipsis"><a class="text-dark" href="<?php echo get_post_permalink(); ?>"><?php the_title(); ?></a></p>
                 </div>
