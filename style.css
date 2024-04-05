@@ -23,6 +23,10 @@ Author URI: https://github.com/badanhvn55
     box-sizing: border-box
 }
 
+.dropdown-toggle::after {
+    display: none !important;
+}
+
 img {
     object-fit: fill;
 }

@@ -54,7 +54,7 @@
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav mr-auto">
           <li class="nav-item dropdown <?php echo $slugName == 'san-pham' ? 'active' : ''; ?>">
-            <a class="nav-link py-3 pl-1 pr-5 cursor-pointer block text-white dropdown-toggle" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Danh mục sản phẩm
+            <a class="nav-link py-3 pl-1 pr-5 cursor-pointer block text-white dropdown-toggle" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fa fa-bars text-white" aria-hidden="true"></i>&nbsp;Danh mục sản phẩm
             </a>
             <div class="dropdown-menu dropdown-primary" aria-labelledby="navbarDropdownMenuLink">
               <?php
