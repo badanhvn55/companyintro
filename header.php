@@ -21,7 +21,10 @@
   $slide2 = get_template_directory_uri() . "/asset/images/slide2.png";
   $slide3 = get_template_directory_uri() . "/asset/images/slide3.png";
   $slide4 = get_template_directory_uri() . "/asset/images/slide4.png";
-  $slide5 = get_template_directory_uri() . "/asset/images/slide5.png";
+  // $slide5 = get_template_directory_uri() . "/asset/images/slide5.png";
+  $subSlide = get_template_directory_uri() . "/asset/images/sub-slide-image.png";
+  $searchIcon = get_template_directory_uri() . "/asset/images/search.svg";
+  $text_param = $_GET['text'] ?? '';
 
   ?>
 
@@ -35,7 +38,7 @@
       <a class="navbar-brand" href="<?php echo $rootURL; ?>"><img width="150" src="<?php echo $logo ?>" /></a>
       <div class="d-flex flex-row justify-content-center align-items-center">
         <div class="mx-4 p-2 border rounded-pill">
-          <span class="text-danger font-weight-bold">Hotline: 0999 999 999</span>
+          <span class="text-danger font-weight-bold">Hotline: 02438398777 / 02435532736</span>
         </div>
         <div class="switch-language font-weight-bold">
           <a class="mr-2" href="#"><span class="text-dark">VI</span></a>
@@ -54,13 +57,13 @@
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav mr-auto">
           <li class="nav-item dropdown <?php echo $slugName == 'san-pham' ? 'active' : ''; ?>">
-            <a class="nav-link py-3 pl-1 pr-5 cursor-pointer block text-white dropdown-toggle" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fa fa-bars text-white" aria-hidden="true"></i>&nbsp;Danh mục sản phẩm
+            <a class="nav-link py-3 pl-1 pr-5 cursor-pointer block text-white dropdown-toggle font-weight-bold" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="background-color: #8BC731;"><i class="fa fa-bars text-white" aria-hidden="true"></i>&nbsp;DANH MỤC SẢN PHẨM
             </a>
-            <div class="dropdown-menu dropdown-primary" aria-labelledby="navbarDropdownMenuLink">
+            <div class="dropdown-menu dropdown-primary w-100 p-0 rounded-0" aria-labelledby="navbarDropdownMenuLink" style="display: inherit; top: 95%;">
               <?php
 
               $taxonomy     = 'product_cat';
-              $orderby      = 'name';
+              $orderby      = 'id';
               $show_count   = 0;      // 1 for yes, 0 for no
               $pad_counts   = 0;      // 1 for yes, 0 for no
               $hierarchical = 1;      // 1 for yes, 0 for no  
@@ -84,61 +87,61 @@
                 // get the image URL
                 $image = wp_get_attachment_url($thumbnail_id);
               ?>
-                <a class="dropdown-item py-2 d-flex flex-row justify-content-between align-items-center" href="<?php echo $rootURL . '/san-pham?category=' . $cat->name . '&paginate=1' ?>"><span><?php echo $cat->name; ?></span><i class="fa fa-caret-right h4" aria-hidden="true"></i></a>
+                <a class="dropdown-item d-flex flex-row justify-content-between align-items-center text-uppercase border-bottom" href="<?php echo $rootURL . '/san-pham?category=' . $cat->name . '&paginate=1' ?>" style="padding: .75rem 1rem"><span><?php echo $cat->name; ?></span><i class="fa fa-caret-right h4" aria-hidden="true"></i></a>
               <?php
               endforeach;
               ?>
-              <a class="dropdown-item py-2" href="#">Tư vấn kỹ thuật</a>
-              <div class="dropdown-item">
-                <form class="form-inline" action="<?php echo $rootURL; ?>/tim-kiem">
-                  <input class="form-control mr-sm-2" type="text" name="text" placeholder="Tìm kiếm" aria-label="Search">
+              <a class="dropdown-item d-flex flex-row justify-content-between align-items-center text-uppercase border-bottom" href="#" style="padding: .75rem 1rem"><span>TƯ VẤN KỸ THUẬT</span></a>
+              <div class="dropdown-item p-0">
+                <form class="form-inline border-0 p-0" action="<?php echo $rootURL; ?>/tim-kiem">
+                  <input class="form-control w-100 rounded-0 border-0" type="text" name="text" value="<?php echo $text_param; ?>" placeholder="TÌM KIẾM SẢN PHẨM" aria-label="Search" style="padding: 1.6rem 4px 1.6rem 40px; background: transparent url('<?php echo $searchIcon; ?>') no-repeat 13px center;">
                 </form>
               </div>
             </div>
           </li>
           <li class="nav-item <?php echo $slugName == '' ? 'active' : ''; ?>">
-            <a class="nav-link py-3 px-5 block text-white" href="<?php echo $rootURL; ?>">Trang chủ <span class="sr-only">(current)</span></a>
+            <a class="nav-link py-3 px-5 block text-white" href="<?php echo $rootURL; ?>">TRANG CHỦ <span class="sr-only">(current)</span></a>
           </li>
           <li class="nav-item <?php echo $slugName == 'gioi-thieu' ? 'active' : ''; ?>">
-            <a class="nav-link py-3 px-5 block text-white" href="<?php echo $rootURL; ?>/gioi-thieu">Giới thiệu</a>
+            <a class="nav-link py-3 px-5 block text-white" href="<?php echo $rootURL; ?>/gioi-thieu">GIỚI THIỆU</a>
           </li>
           <li class="nav-item <?php echo $slugName == 'tin-tuc' ? 'active' : ''; ?>">
-            <a class="nav-link py-3 px-5 block text-white" href="<?php echo $rootURL; ?>/tin-tuc">Tin tức</a>
+            <a class="nav-link py-3 px-5 block text-white" href="<?php echo $rootURL; ?>/tin-tuc">TIN TỨC</a>
           </li>
           <li class="nav-item <?php echo $slugName == 'lien-he' ? 'active' : ''; ?>">
-            <a class="nav-link py-3 px-5 block text-white" href="<?php echo $rootURL; ?>/lien-he">Liên hệ</a>
+            <a class="nav-link py-3 px-5 block text-white" href="<?php echo $rootURL; ?>/lien-he">LIÊN HỆ</a>
           </li>
         </ul>
       </div>
     </div>
   </nav>
 
-  <div class="header-slide clsslide">
-    <div class="card card-raised card-carousel">
-      <div id="carouselindicators" class="carousel slide" data-ride="carousel" data-interval="3000">
+  <div class="header-slide clsslide container" style="margin-bottom: 110px;">
+    <div class="card card-raised card-carousel w-100">
+      <div id="carouselindicators" class="carousel slide" data-ride="carousel" data-interval="10000">
         <ol class="carousel-indicators">
           <li data-target="#carouselindicators" data-slide-to="0" class="active"></li>
           <li data-target="#carouselindicators" data-slide-to="1" class=""></li>
           <li data-target="#carouselindicators" data-slide-to="2" class=""></li>
           <li data-target="#carouselindicators" data-slide-to="3" class=""></li>
-          <li data-target="#carouselindicators" data-slide-to="4" class=""></li>
+          <!-- <li data-target="#carouselindicators" data-slide-to="4" class=""></li> -->
         </ol>
         <div class="carousel-inner">
           <div class="carousel-item active">
-            <img class="d-block" src="<?php echo $slide1 ?>" alt="First slide">
+            <img class="d-block w-100" src="<?php echo $slide1 ?>" alt="First slide">
           </div>
           <div class="carousel-item">
-            <img class="d-block" src="<?php echo $slide2 ?>" alt="Second slide">
+            <img class="d-block w-100" src="<?php echo $slide2 ?>" alt="Second slide">
           </div>
           <div class="carousel-item">
-            <img class="d-block" src="<?php echo $slide3 ?>" alt="Third slide">
+            <img class="d-block w-100" src="<?php echo $slide3 ?>" alt="Third slide">
           </div>
           <div class="carousel-item">
-            <img class="d-block" src="<?php echo $slide4 ?>" alt="Four slide">
+            <img class="d-block w-100" src="<?php echo $slide4 ?>" alt="Four slide">
           </div>
-          <div class="carousel-item">
-            <img class="d-block" src="<?php echo $slide5 ?>" alt="Five slide">
-          </div>
+          <!-- <div class="carousel-item">
+            <img class="d-block w-100" src="<?php //echo $slide5 ?>" alt="Five slide">
+          </div> -->
         </div>
         <a class="carousel-control-prev" href="#carouselindicators" role="button" data-slide="prev" data-abc="true">
           <i class="fa fa-chevron-left"></i>
@@ -148,7 +151,9 @@
           <i class="fa fa-chevron-right"></i>
           <span class="sr-only">Next</span>
         </a>
+        <div class="position-absolute" style="bottom: -110px;">
+          <img class="w-100" src="<?php echo $subSlide ?>" alt="">
+        </div>
       </div>
     </div>
-
   </div>

@@ -8,8 +8,8 @@ $rootURL = '/wordpress';
         <div class="col-md-6">
             <h4 class="font-weight-bold">Trụ sở chính</h4>
             <p><span class="font-weight-bold">Địa chỉ: </span><span>Số 15, hẻm 7, ngách 73, ngõ 1194 đường Láng, Phường Láng Thượng, Quận Đống Đa, Thành phố Hà Nội, Việt Nam</span></p>
-            <p><span class="font-weight-bold">Hotline: </span><span>0999 999 999</span></p>
-            <p><span class="font-weight-bold">Email: </span><span>hoabinhcompany@gmail.com</span></p>
+            <p><span class="font-weight-bold">Hotline: </span><span>02438398777 / 02435532736</span></p>
+            <p><span class="font-weight-bold">Youtobe: </span><a  target="_blank" href="https://www.youtube.com/@hoabinhcorporation8852">HOA BINH CORPORATION</a></p>
             <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d14896.686598908784!2d105.7985877!3d21.0258168!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3135ab449a4ee405%3A0xce317c905f183b50!2zQ8O0bmcgVHkgQ-G7lSBQaOG6p24gUXXhu5FjIFThur8gSMOyYSBCw6xuaA!5e0!3m2!1sen!2s!4v1712152847163!5m2!1sen!2s" width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
         </div>
         <div class="col-md-6">

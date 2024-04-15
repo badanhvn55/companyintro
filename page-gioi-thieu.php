@@ -11,9 +11,10 @@ get_header();
     <div class="row">
         <!-- Công ty cổ phần quốc tế hoà bình -->
         <div class="col-md-8 py-3">
-            <h3 class="text-uppercase text-blue-active font-weight-bold">Công ty cổ phần quốc tế hoà bình</h3>
-            <p>Thành lập từ năm 1993, Công ty cổ phần Quốc tế Hoà Bình luôn gắn bó với người nông dân và đóng góp vào sự phát triển bền vững của nền nông nghiệp Việt Nam. Tập đoàn với 25 chi nhánh trải rộng khắp Việt Nam, một chi nhánh tại Campuchia.</p>
-            <p>Công ty cổ phần Quốc tế Hoà Bình là nhà sản xuất, cung ứng sản phẩm và dịch vụ dẫn đầu thị trường Việt Nam trong lĩnh vực nông nghiệp, với chuỗi giá trị bền vững từ nghiên cứu, sản xuất, kinh doanh các sản phẩm hạt giống, thuốc bảo vệ thực vật, các sản phẩm hữu cơ sinh học, lúa gạo, cà phê.</p>
+            <h3 class="text-uppercase text-blue-active font-weight-bold">Lịch sử ra đời công ty cổ phần quốc tế Hoà Bình</h3>
+            <p>Xuất  phát  từ  nền  kinh  tế thị  trường  và  chính  sách  đổi  mới  nền  kinh tế, là  một  nước  nông  nghiệp  đang  phát  triển  để  hội  nhập  vào  nền  kinh tế  thế  giới. Do nhu cầu rất lớn của nước ta về thuốc bảo vệ thực vật, đặc biệt là nhu cầu đầu tư kinh doanh của một số thành viên đã góp vốn để thành lập công ty, vào năm 1999 Công ty TNHH kinh doanh XNK Hoà Bình đã ra đời.</p>
+            <p>Sau hai năm hoạt động kinh doanh, do có nhu cầu thêm vốn để hoạt động kinh doanh có hiệu quả hơn. Ngày 15/2002, hội đồng thành viên công ty lập biên bản thống nhất chuyển đổi hình thức hoạt động thành Công ty CP Vật tư bảo vệ thực vật Hoà Bình.</p>
+            <p>Sau bốn năm hoạt động, hội đồng quản trị Công ty đổi tên thành Công ty Cổ phần hoá chất nông nghiệp Hoà Bình vào ngày 06/7/2007. Không ngừng phấn đấu đi đôi với việc không ngừng nâng cao chất lượng sản phẩm, Công ty đã chú trọng nâng cao trình độ quản lý, trình độ tay nghề cho cán bộ công nhân viên với mục tiêu đưa tiến bộ khoa học vào sản xuất để bắt kịp xu hướng phát triển của thời đại. Nên vào ngày 03 tháng 6 năm 2008 Công ty đổi tên thành Công ty CP Quốc tế Hoà Bình</p>
         </div>
         <div class="col-md-4 py-3">
             <img class="w-100" src="<?php echo $intro0; ?>" alt="">
@@ -21,7 +22,10 @@ get_header();
         <!-- Tầm nhìn -->
         <div class="col-md-12 py-3">
             <h3 class="text-uppercase text-blue-active font-weight-bold">Tầm nhìn</h3>
-            <p>Hiện thực hóa những ước vọng của nông dân, nâng cao vị thế và chất lượng cuộc sống của người nông dân, góp phần xây dựng những vùng nông thôn đáng sống.</p>
+            <p>Là Công ty hàng đầu khu vực về dịch vụ bảo vệ thực vật.</p>
+            <p>Là người phụng sự được nông dân và người tiêu dùng tin yêu hàng đầu.</p>
+            <p>Tiên phong trong việc ứng dụng các giải pháp khoa học công nghệ tiên tiến hướng tới hiệu quả.</p>
+            <p>Mang lại cuộc sống sung túc cho nhân viên, đem lại lợi nhuận cao cho nhà đầu tư dài hạn.</p>
         </div>
         <!-- Sứ mệnh -->
         <div class="col-md-12 py-3">
@@ -33,27 +37,27 @@ get_header();
         <div class="col-md-12 py-3 bg-gray d-flex flex-row justify-content-between">
             <div class="d-flex flex-column gap-2">
                 <div>
-                    <h3 class="text-green font-weight-bold"><span class="count">24</span>+ năm</h3>
+                    <h3 class="text-blue font-weight-bold"><span class="count">25</span>+ năm</h3>
                     <b>thành lập</b>
                 </div>
                 <div>
-                    <h3 class="text-green font-weight-bold"><span class="count">3200</span>+</h3>
+                    <h3 class="text-blue font-weight-bold"><span class="count">1200</span>+</h3>
                     <b>nhân viên</b>
                 </div>
             </div>
             <div class="d-flex flex-column gap-2">
                 <div>
-                    <h3 class="text-green font-weight-bold"><span class="count">9400</span> tỷ VND</h3>
-                    <b>doanh thu năm 2018</b>
+                    <h3 class="text-blue font-weight-bold"><span class="count">1000</span> tỷ VND</h3>
+                    <b>doanh thu năm 2023</b>
                 </div>
                 <div>
-                    <h3 class="text-green font-weight-bold"><span class="count">100</span> + đối tác</h3>
+                    <h3 class="text-blue font-weight-bold"><span class="count">100</span> + đối tác</h3>
                     <b>Các tập đoàn nông nghiệp, thực phẩm hàng thế giới</b>
                 </div>
             </div>
             <div class="d-flex flex-column gap-2">
                 <div>
-                    <h3 class="text-green font-weight-bold"><span class="count">40</span>+ quốc gia</h3>
+                    <h3 class="text-blue font-weight-bold"><span class="count">20</span>+ quốc gia</h3>
                     <b>sản phẩm hiện diện</b>
                 </div>
             </div>
@@ -64,13 +68,16 @@ get_header();
         </div>
         <div class="col-md-8 py-3">
             <h3 class="text-uppercase text-blue-active font-weight-bold">Chuỗi giá trị nông nghiệp bền vững</h3>
-            <p>Non sông gấm vóc cùng sự tin yêu của người nông dân Việt Nam đã giúp chúng tôi xây dựng nên một Công ty cổ phần Quốc tế Hoà Bình hàng đầu Việt Nam trong lĩnh vực sản xuất và kinh doanh theo chuỗi giá trị sản xuất nông nghiệp, là hiện thân cho khát vọng và sự sáng tạo của nông dân Việt Nam.</p>
+            <p>Giá trị bền vững là một yếu tố quan trọng trong công ty sản xuất thuốc bảo vệ thực vật. Công ty này không chỉ tập trung vào việc tạo ra các sản phẩm hiệu quả để bảo vệ cây trồng khỏi sâu bệnh và côn trùng gây hại, mà còn đặt mục tiêu bảo vệ môi trường và đảm bảo sức khỏe của con người.</p>
+            <p>Công ty cam kết sử dụng các thành phần và công nghệ an toàn, không gây hại cho môi trường và con người. Họ nghiên cứu và áp dụng phương pháp sản xuất tiên tiến, giảm thiểu sự sử dụng chất độc hại và chất thải trong quá trình sản xuất. Đồng thời, công ty đảm bảo rằng sản phẩm của họ đáp ứng các tiêu chuẩn an toàn và không gây tác động tiêu cực đến môi trường khi sử dụng.
+
+Ngoài ra, công ty này cũng thực hiện các hoạt động xã hội và chương trình cộng đồng nhằm hỗ trợ và tạo động lực cho người nông dân. Họ cung cấp các khóa đào tạo về kỹ thuật canh tác bền vững và tư vấn trực tiếp để giúp nâng cao năng suất và chất lượng cây trồng. Điều này không chỉ hỗ trợ người nông dân, mà còn đóng góp vào sự phát triển bền vững của ngành nông nghiệp và cộng đồng nông thôn.</p>
+            <p>Tổng quan, công ty sản xuất thuốc bảo vệ thực vật có giá trị bền vững chú trọng đến việc bảo vệ môi trường, đảm bảo sức khỏe con người và hỗ trợ cộng đồng nông thôn. Bằng cách tiếp cận một cách toàn diện và đồng thời tạo ra các sản phẩm an toàn và hiệu quả, công ty này đóng góp vào sự phát triển bền vững của ngành nông nghiệp và môi trường tự nhiên.</p>
         </div>
         <!-- Cùng nông dân ra đồng -->
         <div class="col-md-8 py-3">
             <h3 class="text-uppercase text-blue-active font-weight-bold">Cùng nông dân ra đồng</h3>
-            <p>Công ty cổ phần Quốc tế Hoà Bình chính thức triển khai chương trình “Cùng nông dân ra đồng” từ năm 2006, tạo nên chuyển biến nhảy vọt trong việc tiếp cận kỹ thuật canh tác hiện đại cho nông dân cả nước.<br>
-                Từ 12 kỹ sư thành viên, đến nay Lực Lượng 3 Cùng đã lên tới gần 1200 kỹ sư cùng ra đồng với nông dân. Tổ chức Guinness Việt Nam đã chính thức công nhận “lực lượng 3 cùng” của Tập đoàn Lộc Trời là lực lượng cùng nông dân ra đồng lớn nhất ở Việt Nam.</p>
+            <p>Công ty cổ phần Quốc tế Hoà Bình chính thức triển khai chương trình “Cùng nông dân ra đồng” từ năm 2006, tạo nên chuyển biến nhảy vọt trong việc tiếp cận kỹ thuật canh tác hiện đại cho nông dân cả nước.</p>
         </div>
         <div class="col-md-4 py-3">
             <img class="w-100" src="<?php echo $intro2; ?>" alt="">
@@ -80,9 +87,18 @@ get_header();
             <img class="w-100" src="<?php echo $intro3; ?>" alt="">
         </div>
         <div class="col-md-8 py-3">
-            <h3 class="text-uppercase text-blue-active font-weight-bold">Phát triển bền vững vì một thế hệ tương lai</h3>
-            <p>Vì nông dân ra đời và nhờ nông dân mà phát triển, Công ty cổ phần Quốc tế Hoà Bình luôn thấu hiểu những thành quả có được ngày hôm nay bắt nguồn từ sự tin yêu của bà con nông dân.<br>
-                Luôn quan tâm đến chất lượng và sự cam kết bền vững, Tập đoàn Lộc Trời không ngừng nghiên cứu, cải tiến sản phẩm để không chỉ đáp ứng nhu cầu sản xuất mà còn góp phần chung tay bảo vệ môi trường. Chúng tôi đóng góp trực tiếp và thiết thực vào các hoạt động xã hội để giúp người nông dân có cuộc sống tốt đẹp hơn.</p>
+            <h3 class="text-uppercase text-blue-active font-weight-bold">Chức năng, nghiệm vụ và ngành nghề</h3>
+            <p>Sản phẩm chủ yếu: Các loại thuốc bảo vệ thực vật (BVTV)</p>
+            <p>Ngành nghề kinh doanh của Công ty CP quốc tế Hoà Bình</p>
+            <ul>
+                <li>Sản xuất, gia công, sang chai, đóng gói thuốc BVTV;</li>
+                <li>Buôn bán phân bón, thức ăn gia súc, gia cầm;</li>
+                <li>Sản xuất buôn bán hoá chất (trừ hoá chất NN cấm)</li>
+                <li>Buôn bán máy móc, thiết bị phục vụ ngành công, nông, thuỷ, hải sản;</li>
+                <li>Xuất nhập khẩu những mặt hàng Công ty kinh doanh;</li>
+                <li>Mua bán, gia công, sang chai, đóng gói hoá chất diệt trừ mối, muỗi, ruồi, kiến, gián được phép sử dụng trong y tế gia dụng (không bao gồm thuốc BVTV và thuốc thú y);</li>
+                <li>Buôn bán thuốc bảo BVTV;</li>
+            </ul>
         </div>
     </div>
 </div>
